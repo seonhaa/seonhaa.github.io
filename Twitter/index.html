@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Twitter Clone</title>
+		<link rel="stylesheet" href="style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+	<body>
+		<!-- sidebar starts -->
+		<div class="sidebar">
+			<i class="fab fa-twitter"></i>
+
+			<div class="sidebarOption active">
+				<span class="material-symbols-outlined"> home </span>
+				<h2>Home</h2>
+			</div>
+
+			<div class="sidebarOption">
+				<span class="material-symbols-outlined"> search </span>
+				<h2>Explore</h2>
+			</div>
+
+			<div class="sidebarOption">
+				<span class="material-symbols-outlined"> notifications </span>
+				<h2>Notifications</h2>
+			</div>
+
+			<div class="sidebarOption">
+				<span class="material-symbols-outlined">mail</span>
+				<h2>Messages</h2>
+			</div>
+
+			<div class="sidebarOption">
+				<span class="material-symbols-outlined">bookmark</span>
+				<h2>Bookmark</h2>
+			</div>
+
+			<div class="sidebarOption">
+				<span class="material-symbols-outlined">list_alt</span>
+				<h2>Lists</h2>
+			</div>
+
+			<div class="sidebarOption">
+				<span class="material-symbols-outlined">person</span>
+				<h2>Profile</h2>
+			</div>
+
+			<div class="sidebarOption">
+				<span class="material-symbols-outlined">more_horiz</span>
+				<h2>More</h2>
+			</div>
+
+			<button class="sidebar__tweet">tweet</button>
+		</div>
+		<!-- sidebar ends -->
+
+		<!-- feed starts -->
+		<div class="feed">
+			<div class="feed__header">
+				<h2>Home</h2>
+			</div>
+
+			<!-- tweetbox starts -->
+			<div class="tweetbox">
+				<form>
+					<div class="tweetbox__input">
+						<img src="images/nuroungee.png" alt="누룽이" />
+						<input type="text" placeholder="what's happening?" />
+					</div>
+					<button class="tweetBOX__tweetButton">Tweet</button>
+				</form>
+			</div>
+			<!-- tweetbox ends -->
+
+			<!-- post starts -->
+			<div class="post">
+				<div class="post__avator">
+					<img src="images/nuroungee2.png" alt="" />
+				</div>
+
+				<div class="post__body">
+					<div class="post__headertext">
+						<h3>
+							황선하
+							<span class="post__headerSpecial">
+								<span class="material-symbols-outlined">verified</span>
+							</span>
+						</h3>
+					</div>
+					<div class="post__headerDescription">
+						<p>퉁퉁퉁퉁 사후루우</p>
+					</div>
+					<!-- 게시물 -->
+					<img src="images/tongtong.png" />
+
+					<div class="post__footer">
+						<span class="material-symbols-outlined">favorite</span>
+						<span class="material-symbols-outlined">upload</span>
+						<span class="material-symbols-outlined">publish</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="post">
+				<div class="post__avator">
+					<img src="images/nuroungee2.png" alt="" />
+				</div>
+
+				<div class="post__body">
+					<div class="post__headertext">
+						<h3>
+							황선하
+							<span class="post__headerSpecial">
+								<span class="material-symbols-outlined">verified</span>
+							</span>
+						</h3>
+					</div>
+					<div class="post__headerDescription">
+						<p>트랄라레로 트랄랄라</p>
+					</div>
+					<!-- 게시물 -->
+					<img src="images/teralral.png" />
+
+					<div class="post__footer">
+						<span class="material-symbols-outlined">favorite</span>
+						<span class="material-symbols-outlined">upload</span>
+						<span class="material-symbols-outlined">publish</span>
+					</div>
+				</div>
+			</div>
+			<!-- post ends -->
+		</div>
+		<!-- feed-ends -->
+
+		<!-- widget starts -->
+		<div class="Widgets">
+			<div class="Widgets__input">
+				<span class="material-symbols-outlined">search</span>
+				<input type="text" placeholder="Search Twitter" />
+			</div>
+			<div class="widgets__container">
+				<h2>What's Happening?</h2>
+				<blockquote class="twitter-tweet">
+					<p lang="en" dir="ltr">
+						At dawn from the gateway to Mars, the launch of Starship’s second flight test
+						<a href="https://t.co/ffKnsVKwG4">pic.twitter.com/ffKnsVKwG4</a>
+					</p>
+					&mdash; SpaceX (@SpaceX)
+					<a href="https://twitter.com/SpaceX/status/1732824684683784516?ref_src=twsrc%5Etfw">December 7, 2023</a>
+				</blockquote>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</div>
+		<!-- widget ends -->
+	</body>
+</html>
