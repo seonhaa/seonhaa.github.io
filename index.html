@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해외주식 동향</title>
+<style>
+  /* 전체 레이아웃 설정 */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f5f5;
+    color: #333;
+  }
+  /* 카드 스타일 */
+  .stock-card {
+    background: #fff;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .stock-name {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+  .stock-price {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .stock-change {
+    font-size: 1em;
+  }
+  .positive {
+    color: green;
+  }
+  .negative {
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+<h1>📈 미국 주요 해외주식 실시간 시세</h1>
+
+<!-- 주식 시세 정보가 들어갈 컨테이너 -->
+<div id="stocks"></div>
+
+<script>
+// == 한글 주석 ==
+// API 호출 함수 (여기서는 예시로 미리 로드된 데이터 사용)
+async function fetchStocks() {
+  // 실제 구현시 fetch()를 통해 API 호출
+  return [
+    { name: 'AAPL', price: 214.4, change: +1.94, changePercent: +0.913 },
+    { name: 'TSLA', price: 332.11, change: +3.80, changePercent: +1.157 },
+    { name: 'GOOGL', price: 191.34, change: +1.24, changePercent: +0.652 }
+  ];
+}
+
+// 주식 카드를 생성하는 함수
+function createStockCard(stock) {
+  const div = document.createElement('div');
+  div.className = 'stock-card';
+
+  const name = document.createElement('div');
+  name.className = 'stock-name';
+  name.textContent = stock.name;
+  div.appendChild(name);
+
+  const price = document.createElement('div');
+  price.className = 'stock-price';
+  price.textContent = stock.price.toFixed(2) + ' USD';
+  div.appendChild(price);
+
+  const change = document.createElement('div');
+  change.className = 'stock-change';
+  const sign = stock.change >= 0 ? '+' : '';
+  change.textContent = `${sign}${stock.change.toFixed(2)} USD (${sign}${stock.changePercent.toFixed(2)}%)`;
+  change.classList.add(stock.change >= 0 ? 'positive' : 'negative');
+  div.appendChild(change);
+
+  return div;
+}
+
+// 페이지 로드 시 데이터 렌더링
+async function init() {
+  const stocks = await fetchStocks();
+  const container = document.getElementById('stocks');
+  container.innerHTML = '';
+  stocks.forEach(stock => {
+    const card = createStockCard(stock);
+    container.appendChild(card);
+  });
+}
+
+// 초기 실행 + 주기적 업데이트 (예: 60초마다)
+init();
+setInterval(init, 60000);
+</script>
+
+</body>
+</html>
