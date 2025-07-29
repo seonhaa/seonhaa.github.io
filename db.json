@@ -1,12 +1,12 @@
 {
     "users" : [
         {
-            "id" : "1",
+            "id" : 1,
             "username" : "황선하",
             "joinedAt": "2025-07-29"   
         },
         {
-            "id" : "2",
+            "id" : 2,
             "username" : "박현정",
             "joinedAt": "2025-07-29"
         }
@@ -17,6 +17,7 @@
             "userId" : "1",
             "title" : "감마로 강의안 만들고 디자인 수정하기",
             "introduction" : "강의안을 AI로 뚝딱 만들고 싶어서 감마로 도전해보았습니다. 마침 감마 1개월 Pro권을 사용하고 있는 중이라 무료 버전과 얼마나 차이가 있는지 pro권 기간이 끝나기 전에 테스트 해보았습니다.",
+            "url" : "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjVfMjUy%2FMDAxNzI0NTYxODY0NTYx.gBqgjZp212MI9xvYRBWK-4PrjD7i0ISHbKpRPN9AMc0g.ti9Bl7gv_WjN5_iTipsl4PDaHy41N-fe09u3BUjkrPkg.JPEG%2FIMG_3754.JPG&type=sc960_832",
             "date": "2025-07-29",
             "content" : "감마 사이트에 AI로 생성하는 것으로 사용해보았습니다. 개요도 AI에게 맡기고 내용이 얼마나 강의에 실제적으로 사용할만한 내용이 나오는지 보고 싶었습니다. 또한 무료 버전에서는 슬라이드 갯수가 한정되어 있어서 pro에서는 최대 사용할 수 있는 슬라이드수를 만들어보고자 했습니다."
         ,"comments": [
