@@ -1,0 +1,55 @@
+✅ 1. 핵심 기획 방향 정리
+목적:
+AI·ChatGPT 활용 정보 및 뉴스 큐레이션
+
+사용자가 매주/월 뉴스레터 구독 가능
+
+AI 도구 소개 + 실습 예제 + GPTs 링크 등 연계
+
+대상 사용자:
+ChatGPT, Midjourney, Claude 등 관심 있는 일반인
+
+초중급 개발자 or 콘텐츠 마케터
+
+✅ 2. 기술 스택 구성
+Frontend:
+
+HTML : 구조 설계 (header, main, footer 등)
+
+CSS : 반응형 디자인 (media query 포함)
+
+JS : 구독폼 동작, 뉴스 동적 로딩
+
+데이터:
+
+JSON : 뉴스 데이터/카드 목록 구성
+
+(Optional) LocalStorage : 사용자 설정 저장
+
+이후 필요시 Firebase or Supabase로 백엔드 확장 가능
+
+✅ 3. 핵심 기능 정의
+기능	설명
+뉴스 카드 렌더링	최신 뉴스 JSON을 불러와 리스트화
+주간/월간 구독 선택	사용자가 선택한 주기대로 이메일 입력
+GPTs 사례 모음	gpters.org의 GPT 사례 리스트 일부 인용
+이미지/영상 콘텐츠	Midjourney, DALL-E 이미지 카드
+검색 & 필터	뉴스 키워드 검색 (AI, GPT, 텍스트, 이미지 등)
+반응형 대응	모바일 대응 UI 필수
+
+✅ 4. 기본 파일 구조 예시
+kotlin
+복사
+편집
+/ai-newsletter/
+│
+├── index.html            // 메인 페이지
+├── style.css             // CSS 파일
+├── script.js             // 기본 JS 로직
+├── data/
+│   └── news.json         // 뉴스 카드 데이터
+├── assets/
+│   ├── images/           // 배너, 썸네일 이미지
+│   └── icons/            // 아이콘 모음
+└── components/
+    └── newsletterCard.js // 뉴스 카드 컴포넌트

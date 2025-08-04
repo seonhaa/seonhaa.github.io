@@ -1,150 +1,57 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>개발자 포트폴리오</title>
-  <style>
-    /* 배경 애니메이션 */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #fff;
-      overflow-x: hidden;
-    }
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <title>AI News Letter</title>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <!-- 뉴스 헤더 -->
+        <header>
+            <div class="header_content">
+                <h1 class="service_mainitem"><a href="#"><span class="icon_service">뉴스</span></a></h1>
+                <span class="service_subitem"><a href="#"><span class="icon_serviceEntertain">엔터</span></a></span>
+                <span class="service_subitem"><a href="#"><span class="icon_serviceSports">스포츠</span></a></span
+                ></span>
+                <span class="service_subitem"><a href="#"><span class="icon_servicePolitics">정치</span></a></span
+                ></span>
+        <!-- 검색 바 -->
+            <div class="search">
+                <div class="searchBar">
+                    <input type="text" placeholder="검색">
+                </div>
+                <span class="material-symbols-outlined">search</span>
+            </div>
+            </div>
+        </header>
+        <hr />
 
-    /* 전체 중앙 정렬 */
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    /* 타이핑 애니메이션 텍스트 */
-    .typing {
-      font-size: 2em;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #fff;
-      width: 0;
-      animation: typing 4s steps(30, end) forwards, blink 0.7s infinite;
-    }
-
-    /* 프로젝트 카드 그리드 */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 50px;
-      width: 80%;
-    }
-
-    /* 각 프로젝트 카드 */
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 15px;
-      padding: 20px;
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease;
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-    }
-
-    /* 카드 hover 애니메이션 */
-    .card:hover {
-      transform: scale(1.05);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    /* 버튼 효과용 아이콘 */
-    .card::after {
-      content: "→";
-      display: inline-block;
-      margin-left: 10px;
-      transform: translateX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover::after {
-      transform: translateX(5px);
-    }
-
-    /* 키프레임: 배경 그라디언트 무한 이동 */
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* 키프레임: 타이핑 효과 */
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 22ch; }
-    }
-
-    /* 커서 깜빡임 */
-    @keyframes blink {
-      0%, 100% { border-color: transparent; }
-      50% { border-color: white; }
-    }
-
-    /* 키프레임: 카드 위로 부드럽게 등장 */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* 카드 순차 애니메이션 딜레이 */
-    .card:nth-child(1) { animation-delay: 0.3s; }
-    .card:nth-child(2) { animation-delay: 0.6s; }
-    .card:nth-child(3) { animation-delay: 0.9s; }
-    .card:nth-child(4) { animation-delay: 1.2s; }
-
-    /* 반응형 조정 */
-    @media (max-width: 600px) {
-      .typing {
-        font-size: 1.5em;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- 전체 컨테이너 -->
-  <div class="container">
-    <!-- 타이핑 효과 텍스트 -->
-    <div class="typing">안녕하세요, 개발자 황선하입니다.</div>
-
-    <!-- 프로젝트 링크 카드 영역 -->
-    <div class="projects">
-      <div class="card" onclick="location.href='/weather'">🌦 날씨 앱</div>
-      <div class="card" onclick="location.href='/Netflix'">🎬 Netflix 클론</div>
-      <div class="card" onclick="location.href='/Twitter'">🐦 Twitter 클론</div>
-      <div class="card" onclick="location.href='/Facebook'">📘 Facebook 클론</div>
-    </div>
-  </div>
-
-  <script>
-    // == 한글 주석 == 
-    // 페이지 진입 시 애니메이션이 잘 보이도록 카드 opacity 제어
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        card.style.opacity = 1;
-      });
-    });
-  </script>
-</body>
+        <div class="main_content">
+            <p>이곳은 메인 컨텐츠</p>
+            <!-- 내용 1 -->
+            <!-- 내용 2 -->
+            <!-- 내용 3 -->
+            <!-- 내용 4 -->
+        </div>
+        <hr />
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer_inner">
+                <div class="footer_links">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">고객센터</a>
+                <a href="#">광고문의</a>
+                </div>
+                
+                <div class="footer_info">
+                <p>© 2025 Hwang SSun. All rights reserved.</p>
+                <p>이 사이트는 <a href="#" target="_blank">Hwang SSun@naver.com</a>의 AI 콘텐츠를 참조합니다.</p>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
