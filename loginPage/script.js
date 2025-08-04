@@ -50,7 +50,7 @@ async function saveResource(userName, userPw) {
 async function register(userName, userPw) {
   try {
     // 1) 인증 서버에 회원가입 요청
-    const res = await fetch(`${AUTH_BASE}/register`, {
+    const res = await fetch(`${API_BASE}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: userPw }),
@@ -75,7 +75,7 @@ async function register(userName, userPw) {
 // === 로그인 함수 ===
 async function login(userName, userPw) {
   try {
-    const res = await fetch(`${AUTH_BASE}/login`, {
+    const res = await fetch(`${API_BASE}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: userPw }),
