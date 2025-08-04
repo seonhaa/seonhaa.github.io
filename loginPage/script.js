@@ -1,5 +1,5 @@
 // script.js
-const API_BASE = "https://api.web3.io.kr/Aether/test";
+const API_BASE = "https://api.web3.io.kr/Aether/resources";
 const AUTH_BASE = `${API_BASE}/auth`;
 const RESOURCE_URL = `${API_BASE}/resources`;
 
