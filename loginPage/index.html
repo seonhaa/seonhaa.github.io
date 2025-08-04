@@ -1,23 +1,35 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<body>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auth Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="loginBx">
-        <h2>Login</h2>
-        <form>
-            <div class="loginForm">
-                <input type="text"  name="userName" placeholder="ID">
-                <input type="text"  name="userPw" placeholder="PassWord">
-            </div>
-            <input type="submit" value="Login">
-        </form>
+      <div class="toggleBtn">
+        <span id="toggleLogin" class="active">Login</span>
+        <span id="toggleRegister">Register</span>
+      </div>
+      <h2 id="formTitle">Login</h2>
+
+      <!-- 로그인 폼 -->
+      <form id="loginForm" class="loginForm">
+        <input type="text" name="userName" placeholder="ID" required />
+        <input type="password" name="userPw" placeholder="PassWord" required />
+        <input type="submit" value="Login" />
+      </form>
+
+      <!-- 회원가입 폼 -->
+      <form id="registerForm" class="loginForm hidden">
+        <input type="text" name="userName" placeholder="ID" required />
+        <input type="password" name="userPw" placeholder="PassWord" required />
+        <input type="submit" value="Register" />
+      </form>
     </div>
-</body>
+
+    <script src="script.js"></script>
+  </body>
 </html>

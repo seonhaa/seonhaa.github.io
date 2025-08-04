@@ -1,92 +1,113 @@
+/* style.css */
 /* 베이스 스타일 */
 * {
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
-/* 로그인 박스 스타일 */
+/* 로그인/회원가입 박스 스타일 */
 .loginBx {
-    width: 100%;
-    max-width: 400px;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    text-align: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  text-align: center;
 }
 
+/* 토글 버튼 스타일 */
+.toggleBtn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.toggleBtn span {
+  margin: 0 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.toggleBtn span.active {
+  border-color: #fff;
+}
+
+/* 제목 */
 .loginBx h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    color: #fff;
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #fff;
 }
 
-/* 로그인 입력 폼 스타일 */
+/* 폼 공통 스타일 */
 .loginForm {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-
 .loginForm input {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    font-size: 16px;
-    border: 2px solid #ffffff80;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 16px;
+  border: 2px solid #ffffff80;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
-
 .loginForm input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
-
 .loginForm input:focus {
-    border-color: #2575fc;
-    background-color: rgba(255, 255, 255, 0.25);
-    outline: none;
+  border-color: #2575fc;
+  background-color: rgba(255, 255, 255, 0.25);
+  outline: none;
 }
 
-/* 로그인 버튼 스타일 */
-input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    background-color: #2575fc;
-    border-radius: 10px;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* 제출 버튼 */
+.loginForm input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #2575fc;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.loginForm input[type="submit"]:hover {
+  background-color: #6a11cb;
 }
 
-input[type="submit"]:hover {
-    background-color: #6a11cb;
+/* 숨김 클래스 */
+.hidden {
+  display: none;
 }
 
-/* 작은 화면 (모바일)에서 폼 크기 조정 */
+/* 작은 화면 (모바일) 대응 */
 @media (max-width: 500px) {
-    .loginBx {
-        padding: 30px;
-        width: 90%;
-    }
-
-    .loginBx h2 {
-        font-size: 28px;
-    }
+  .loginBx {
+    padding: 30px;
+    width: 90%;
+  }
+  .loginBx h2 {
+    font-size: 28px;
+  }
 }
