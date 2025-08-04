@@ -1,7 +1,5 @@
 // script.js
 const API_BASE = "https://api.web3.io.kr/Aether/resources";
-const AUTH_BASE = `${API_BASE}/auth`;
-const RESOURCE_URL = `${API_BASE}/resources`;
 
 // 토글 요소 가져오기
 const toggleLoginBtn = document.getElementById("toggleLogin");
@@ -31,7 +29,7 @@ toggleRegisterBtn.addEventListener("click", () => {
 // 회원가입 정보(username, password)를 /resources에 POST
 async function saveResource(userName, userPw) {
   try {
-    const res = await fetch(RESOURCE_URL, {
+    const res = await fetch(API_BASE, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: userPw }),
