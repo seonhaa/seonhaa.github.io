@@ -1,5 +1,4 @@
 // script.js
-// main.js
 
 import { addToggleEventListeners } from './eventListeners.js';
 import { saveResource,register,login } from './api.js';
