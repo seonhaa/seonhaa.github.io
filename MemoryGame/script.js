@@ -1,10 +1,3 @@
-// 로그인 확인
-const token = localStorage.getItem("token");
-if (!token) {
-  alert("로그인이 필요합니다.");
-  window.location.href = "/loginPage/index.html"; // 또는 실제 경로에 맞게 수정
-}
-
 
 const emojis = [
   "😀",
