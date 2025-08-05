@@ -1,28 +1,24 @@
 // script.js
+// main.js
+
+import { addToggleEventListeners } from './eventListeners.js';
+
 const API_BASE = "https://api.web3.io.kr/Aether/resources";
 
-// 토글 요소 가져오기
+// DOM 요소 가져오기
 const toggleLoginBtn = document.getElementById("toggleLogin");
 const toggleRegisterBtn = document.getElementById("toggleRegister");
 const loginFormEl = document.getElementById("loginForm");
 const registerFormEl = document.getElementById("registerForm");
 const formTitleEl = document.getElementById("formTitle");
 
-// 토글 클릭 이벤트
-toggleLoginBtn.addEventListener("click", () => {
-  toggleLoginBtn.classList.add("active");
-  toggleRegisterBtn.classList.remove("active");
-  formTitleEl.textContent = "Login";
-  loginFormEl.classList.remove("hidden");
-  registerFormEl.classList.add("hidden");
-});
-
-toggleRegisterBtn.addEventListener("click", () => {
-  toggleRegisterBtn.classList.add("active");
-  toggleLoginBtn.classList.remove("active");
-  formTitleEl.textContent = "Register";
-  registerFormEl.classList.remove("hidden");
-  loginFormEl.classList.add("hidden");
+// 이벤트 리스너 초기화
+addToggleEventListeners({
+  toggleLoginBtn,
+  toggleRegisterBtn,
+  loginFormEl,
+  registerFormEl,
+  formTitleEl
 });
 
 // === 리소스 저장 함수 ===
