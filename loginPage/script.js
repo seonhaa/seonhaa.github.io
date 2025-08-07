@@ -1,5 +1,5 @@
 import { addToggleEventListeners } from './module/eventListeners.js';
-import { register, login } from './module/api.js';
+import { register, login, deleteResource } from './module/api.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggleLoginBtn = document.getElementById("toggleLogin");
@@ -33,3 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     register(userName, userPw, () => toggleLoginBtn.click()); // 회원가입 후 로그인 탭으로 자동 전환
   });
 });
+
+deleteResource(42)
+  .then(() => {
+    // UI 업데이트: 목록에서 해당 항목 제거 등
+  })
+  .catch(err => {
+    alert('삭제 중 오류가 발생했습니다: ' + err.message);
+  });
