@@ -1,4 +1,7 @@
 ✅ 1. 핵심 기획 방향 정리
+방향성: 
+loginPage 와 연동하여 로그인 성공 시 뉴스레터 페이지도 이동하게 설계
+
 목적:
 AI·ChatGPT 활용 정보 및 뉴스 큐레이션
 
@@ -20,13 +23,9 @@ CSS : 반응형 디자인 (media query 포함)
 
 JS : 구독폼 동작, 뉴스 동적 로딩
 
-데이터:
-
-JSON : 뉴스 데이터/카드 목록 구성
+api : 뉴스 데이터/카드 목록 구성
 
 (Optional) LocalStorage : 사용자 설정 저장
-
-이후 필요시 Firebase or Supabase로 백엔드 확장 가능
 
 ✅ 3. 핵심 기능 정의
 기능	설명
@@ -46,8 +45,7 @@ kotlin
 ├── index.html            // 메인 페이지
 ├── style.css             // CSS 파일
 ├── script.js             // 기본 JS 로직
-├── data/
-│   └── news.json         // 뉴스 카드 데이터
+├── 외부 api         // 뉴스 카드 데이터
 ├── assets/
 │   ├── images/           // 배너, 썸네일 이미지
 │   └── icons/            // 아이콘 모음
