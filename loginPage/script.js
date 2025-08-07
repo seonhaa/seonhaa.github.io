@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// api 정보 삭제 코드
 deleteResource("6891aa19ef3eb562863acc49")
   .then(() => {
     // UI 업데이트: 목록에서 해당 항목 제거 등
