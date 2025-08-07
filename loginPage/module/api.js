@@ -65,7 +65,7 @@ export async function login(userName, userPw) {
     // JWT 토큰이 data.token에 담겨 온다고 가정
     localStorage.setItem("token", data.token);
     alert("로그인 성공!");
-    // 필요 시 대시보드 등 보호된 페이지로 리다이렉트
+    // 로그인 성공 시 대시보드 등 보호된 페이지로 리다이렉트
     window.location.href = "../AI-newsletter/index.html";
   } catch (err) {
     console.error("로그인 오류:", err);
