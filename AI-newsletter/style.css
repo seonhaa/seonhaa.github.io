@@ -139,3 +139,72 @@ hr {
     align-items: center;
   }
 }
+
+/* 데이터 시각화용 스타일 */
+#userTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+#userTable th,
+#userTable td {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  text-align: left;
+}
+#userTable th {
+  background-color: var(--header-bg);
+}
+
+.post-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.post-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+.post-card small {
+  color: #666;
+}
+.post-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0.75rem 0;
+}
+
+.post-card .show-content {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.post-card .show-content:hover {
+  background: darken(var(--primary-color), 10%);
+}
+
+.post-card .full-content {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.post-card .comment {
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+#postsChart {
+  display: block;
+  max-width: 100%;
+  margin: 2rem auto;
+}
