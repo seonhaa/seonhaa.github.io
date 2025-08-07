@@ -1,6 +1,5 @@
 import { addToggleEventListeners } from './module/eventListeners.js';
 import { register, login } from './module/api.js';
-import {deleteResource} from './module/delete.js'
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggleLoginBtn = document.getElementById("toggleLogin");
@@ -35,11 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// api 정보
-deleteResource("689415cc50e1542a818bcf3d")
-  .then(() => {
-    // UI 업데이트: 목록에서 해당 항목 제거 등
-  })
-  .catch(err => {
-    alert('삭제 중 오류가 발생했습니다: ' + err.message);
-  });
+

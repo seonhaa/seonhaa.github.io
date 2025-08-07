@@ -1,15 +1,11 @@
-// delete.js
+const API_BASE_DELETE = "https://api.web3.io.kr/Aether/resources";
 
-const API_BASE = "https://api.web3.io.kr/Aether/resources";
-/**
- * 주어진 리소스 ID를 삭제합니다.
- * @param {string|number} id 삭제할 리소스의 고유 ID
- */
-export async function deleteResource(id) {
+async function deleteResource(id) {
   try {
-    const url = `${API_BASE}/${id}`;
+    const url = `${API_BASE_DELETE}/${id}`;
+    // console.log(url);
     const res = await fetch(url, {
-      method: "DELETE"
+      method: "DELETE",
     });
     if (!res.ok) {
       const errorData = await res.json().catch(() => ({}));
@@ -21,3 +17,12 @@ export async function deleteResource(id) {
     throw err;
   }
 }
+
+// api 정보
+deleteResource()
+  .then(() => {
+    // UI 업데이트: 목록에서 해당 항목 제거 등
+  })
+  .catch((err) => {
+    alert("삭제 중 오류가 발생했습니다: " + err.message);
+  });
