@@ -1,5 +1,6 @@
 import { addToggleEventListeners } from './module/eventListeners.js';
-import { register, login, deleteResource } from './module/api.js';
+import { register, login } from './module/api.js';
+import {deleteResource} from './module/delete.js'
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggleLoginBtn = document.getElementById("toggleLogin");
