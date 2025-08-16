@@ -1,5 +1,5 @@
 
-// eventListeners.js
+// module/eventListeners.js
 
 export function addToggleEventListeners({
   toggleLoginBtn,

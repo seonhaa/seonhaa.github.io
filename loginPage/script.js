@@ -8,7 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const registerFormEl = document.getElementById("registerForm");
   const formTitleEl = document.getElementById("formTitle");
 
-  // 이벤트 리스너 초기화
+  // 안전 가드: 필수 엘리먼트 확인
+  if (!loginFormEl || !registerFormEl) {
+    console.error("폼 요소를 찾을 수 없습니다.");
+    return;
+  }
+
+  // 토글 버튼 이벤트 연결
   addToggleEventListeners({
     toggleLoginBtn,
     toggleRegisterBtn,
@@ -17,21 +23,52 @@ document.addEventListener("DOMContentLoaded", () => {
     formTitleEl
   });
 
-  // 로그인 폼 제출 이벤트
-  loginFormEl.addEventListener("submit", (e) => {
+  // 공용 헬퍼: 폼 로딩 토글
+  function setFormLoading(form, isLoading) {
+    const submitBtn = form.querySelector('[type="submit"]');
+    if (submitBtn) submitBtn.disabled = isLoading;
+    const inputs = form.querySelectorAll('input, button, select, textarea');
+    inputs.forEach(el => {
+      if (el !== submitBtn) el.disabled = isLoading;
+    });
+    form.classList.toggle('opacity-60', isLoading);
+    form.classList.toggle('pointer-events-none', isLoading);
+  }
+
+  // 로그인 폼 제출
+  loginFormEl.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const userName = loginFormEl.userName.value.trim();
-    const userPw = loginFormEl.userPw.value.trim();
-    login(userName, userPw);
+    const userName = loginFormEl.querySelector('input[name="userName"]')?.value.trim() || "";
+    const userPw   = loginFormEl.querySelector('input[name="userPw"]')?.value.trim() || "";
+    if (!userName || !userPw) {
+      alert("아이디와 비밀번호를 입력해주세요.");
+      return;
+    }
+
+    try {
+      setFormLoading(loginFormEl, true);
+      await login(userName, userPw); // api.js 내부에서 에러 핸들링/리다이렉트
+    } finally {
+      setFormLoading(loginFormEl, false);
+    }
   });
 
-  // 회원가입 폼 제출 이벤트
-  registerFormEl.addEventListener("submit", (e) => {
+  // 회원가입 폼 제출
+  registerFormEl.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const userName = registerFormEl.userName.value.trim();
-    const userPw = registerFormEl.userPw.value.trim();
-    register(userName, userPw, () => toggleLoginBtn.click()); // 회원가입 후 로그인 탭으로 자동 전환
+    const userName = registerFormEl.querySelector('input[name="userName"]')?.value.trim() || "";
+    const userPw   = registerFormEl.querySelector('input[name="userPw"]')?.value.trim() || "";
+    if (!userName || !userPw) {
+      alert("아이디와 비밀번호를 입력해주세요.");
+      return;
+    }
+
+    try {
+      setFormLoading(registerFormEl, true);
+      // api.register: 성공 시 /resources에는 username만 저장, 비번은 서버에서 해시 저장
+      await register(userName, userPw, () => toggleLoginBtn?.click());
+    } finally {
+      setFormLoading(registerFormEl, false);
+    }
   });
 });
-
-

@@ -19,7 +19,7 @@ async function deleteResource(id) {
 }
 
 // api 정보
-deleteResource("68943cece5463d3a9cdae9eb")
+deleteResource("68a04e0b939175435855cfc7")
   .then(() => {
     // UI 업데이트: 목록에서 해당 항목 제거 등
   })
