@@ -52,7 +52,7 @@ export async function register(userName, userPw) {
 // === 로그인 함수 ===
 export async function login(userName, userPw) {
   try {
-    const res = await fetch(`${API_BASE}/login`, {
+    const res = await fetch(`${API_BASE}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: userPw }),
