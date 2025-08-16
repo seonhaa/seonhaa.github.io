@@ -26,23 +26,29 @@ export async function saveResource(userName, userPw) {
 // === 회원가입 함수 ===
 export async function register(userName, userPw) {
   try {
-    // 1) 인증 서버에 회원가입 요청
     const res = await fetch(`${API_BASE}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: userPw }),
     });
-    const data = await res.json();
+
+    // 서버가 빈 본문을 줄 수도 있으니 방어적으로 파싱
+    let data = null;
+    try { data = await res.json(); } catch (_) {}
+
     if (!res.ok) {
-      throw new Error(data.message || "회원가입 실패");
+      throw new Error((data && data.message) || "회원가입 실패");
     }
 
-    // 2) 회원가입 성공 시 /resources에도 정보 저장
     await saveResource(userName, userPw);
 
     alert("회원가입 성공! 이제 로그인 해주세요.");
-    // 자동으로 로그인 폼으로 전환
-    toggleLoginBtn.click();
+
+// 여기서 DOM 다시 찾아서 클릭 실행
+    const toggleLoginBtn = document.getElementById("toggleLogin");
+    if (toggleLoginBtn) {
+      toggleLoginBtn.click();
+    }
   } catch (err) {
     console.error("회원가입 오류:", err);
     alert(`회원가입 오류: ${err.message}`);
@@ -52,7 +58,7 @@ export async function register(userName, userPw) {
 // === 로그인 함수 ===
 export async function login(userName, userPw) {
   try {
-    const res = await fetch(`${API_BASE}`, {
+    const res = await fetch(`${API_BASE}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: userPw }),
