@@ -1,0 +1,138 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --primary: #1f4fff; /* 딥블루 */
+  --primary-ink: #e9efff; /* 연한 블루 */
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Noto Sans KR", "Apple SD Gothic Neo", "Helvetica Neue", Arial,
+    "PingFang SC", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 기본 링크 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* 얇은 구분선 */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+/* 안전영역 패딩 (iOS notch 대응) */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* nav */
+.nav {
+  position: sticky; /* 상단에 고정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px; /* 네비게이션 바 높이 */
+  display: flex;
+  background: #254995; /* 네이비 배경 */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px; /* 좌우 여백 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+}
+.nav .icons {
+  width: 60px; /* nav 높이에 맞춤 */
+  height: 60px; /* nav 높이에 맞춤 */
+  margin-left: -20px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center; /* 세로 가운데 정렬 */
+  justify-content: center; /* 가로 가운데 정렬 */
+}
+
+.nav .icons .material-symbols-outlined {
+  font-size: 45px; /* 토글 버튼과 균형 맞춤 */
+  color: #fff; /* 흰색으로 통일 */
+  line-height: 1;
+}
+
+.nav .toggle {
+  width: 36px;
+  height: 28px;
+  padding-left: 50px;
+  background: url("images/toggle.png") no-repeat center center;
+  background-size: contain; /* 이미지가 잘 맞게 조정 */
+  cursor: pointer; /* 손가락 모양 커서 */
+}
+
+.header a:first-child {
+  background: var(--primary-ink);
+  color: var(--primary);
+  border-color: #dbe3ff;
+}
+
+/* -----------------------
+   Footer (탭바)
+------------------------*/
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background: var(--card);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 6px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom));
+}
+.footerOption {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerOption a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footerOption .material-symbols-outlined {
+  font-size: 28px;
+  color: #6b7280; /* 비활성 회색 */
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+.footerOption a:active .material-symbols-outlined {
+  transform: scale(0.92);
+}
+
+/* 두 번째 아이템을 '선택됨'처럼 강조 */
+.footerOption:nth-of-type(2) .material-symbols-outlined {
+  color: var(--primary);
+}

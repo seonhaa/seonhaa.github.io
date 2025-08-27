@@ -1,0 +1,244 @@
+/* -----------------------
+   Base / Reset
+------------------------*/
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --primary: #1f4fff; /* 딥블루 */
+  --primary-ink: #e9efff; /* 연한 블루 */
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Noto Sans KR", "Apple SD Gothic Neo", "Helvetica Neue", Arial,
+    "PingFang SC", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 기본 링크 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 얇은 구분선 */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+/* 안전영역 패딩 (iOS notch 대응) */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* -----------------------
+   Top Navigation
+------------------------*/
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+.nav img {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+.nav .icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--text);
+}
+.nav .icons .material-symbols-outlined {
+  color: #1f2937; /* 약간 진한 회색 */
+  opacity: 0.9;
+}
+
+/* -----------------------
+   Header Tabs (카드형 메뉴)
+------------------------*/
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--card);
+}
+.header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.2s ease;
+  border: 1px solid #eef0f5;
+}
+.header a:hover {
+  filter: brightness(0.98);
+}
+.header a:active {
+  transform: scale(0.98);
+}
+
+/* 첫 번째 탭을 기본 강조(활성처럼 보이게) */
+.header a:first-child {
+  background: var(--primary-ink);
+  color: var(--primary);
+  border-color: #dbe3ff;
+}
+
+/* 섹션과 섹션 사이 라인 제거용 */
+.header + hr {
+  border-top-color: #eef0f5;
+}
+
+/* -----------------------
+   Footer (탭바)
+------------------------*/
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background: var(--card);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 6px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom));
+}
+.footerOption {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerOption a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footerOption .material-symbols-outlined {
+  font-size: 28px;
+  color: #6b7280; /* 비활성 회색 */
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+.footerOption a:active .material-symbols-outlined {
+  transform: scale(0.92);
+}
+
+/* 첫 번째 아이템을 '선택됨'처럼 강조 */
+.footerOption:nth-of-type(1) .material-symbols-outlined {
+  color: var(--primary);
+}
+
+/* -----------------------
+   Page Spacing
+------------------------*/
+/* 상단/하단 고정바 높이만큼 본문 여백 확보 */
+/* body::before {
+  content: "";
+  display: block;
+  height: 56px; 
+}
+body::after {
+  content: "";
+  display: block;
+  height: 64px; 
+} 
+*/
+
+/* -----------------------
+   Helpers (카드/리스트 등 확장용)
+------------------------*/
+/* 공용 카드 레이아웃: 추후 본문 카드가 생기면 사용 */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.02);
+}
+
+/* 작은 뱃지 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* -----------------------
+   Responsive
+------------------------*/
+@media (min-width: 480px) {
+  /* 모바일 화면을 중앙에 카드처럼 보이게(선택) */
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  .app {
+    width: 390px; /* iPhone 12/13/14 폭 느낌 */
+    min-height: 100vh;
+    background: var(--bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* 스크롤바 미니멀 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8dbe3;
+  border-radius: 8px;
+}
