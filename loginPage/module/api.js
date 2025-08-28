@@ -80,7 +80,7 @@ export async function login(userName, userPw) {
       localStorage.setItem("token", data.token);
     }
     alert("로그인 성공!");
-    window.location.href = "../AI-newsletter/index.html";
+    window.location.href = "../AI-Toeic/index.html";
   } catch (err) {
     console.error("로그인 오류:", err);
     alert(`로그인 오류: ${err.message}`);
