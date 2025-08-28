@@ -90,10 +90,25 @@ hr {
 }
 .material-symbols-outlined {
   font-family: "Material Symbols Outlined";
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-  font-size: 26px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 26px;   /* 필요시 조절 */
   line-height: 1;
   display: inline-block;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+
+  /* 핵심: 두 줄 모두 */
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+
+  -webkit-font-smoothing: antialiased;
+
+  /* 스타일 옵션 */
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   color: var(--text);
 }
 
