@@ -20,17 +20,17 @@
         >
       </div>
     </div>
-    <hr />
-    <!-- container -->
-    <div class="container">
-      <div id="newtask">
-        <input type="text" placeholder="Task to be done">
-        <button id="push">Add</button>
 
-        <div id="tasks"></div>
+    <!-- Main content: 상단/하단 고정바 높이만큼 패딩 확보 -->
+    <main class="main">
+      <div class="container">
+        <div id="newtask">
+          <input type="text" placeholder="Task to be done" />
+          <button id="push">Add</button>
+          <div id="tasks"></div>
+        </div>
       </div>
-    </div>
-    <hr />
+    </main>
     <!-- footer -->
     <div class="footer">
       <div class="footerOption">
@@ -59,28 +59,6 @@
         >
       </div>
     </div>
-    <script>
-      document.querySelector('#push').onclick = function(){
-        if(document.querySelector('#newtask input').value.length == 0){
-          alert("Please Enter a Task")
-        }else{
-          document.querySelector('#tasks').innerHTML +=`<div class="task">
-            <span id=”taskname”>
-                    ${document.querySelector('#newtask input').value}
-                </span>
-                <button class=”delete”>
-                    <i class=”far fa-trash-alt”></i>
-                </button>
-            </div>`;
-            var current_tasks = 
-            document.querySelectorAll(".delete");
-            for(i=0;i<current_tasks.length;i++){
-              current_tasks[i].onclick=function(){
-                this.parentNode.remove();
-              }
-            }
-        }
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
