@@ -1,51 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Second Page</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet" />
+    <title>My Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Navigation -->
     <div class="nav" id="nav">
       <div class="icons">
-        <a href="../mainPage/index.html"
-          ><span class="material-symbols-outlined"> home </span></a
-        >
+        <a href="../mainPage/index.html">
+          <span class="material-symbols-outlined">home</span>
+        </a>
       </div>
       <div class="toggle"></div>
     </div>
     <hr />
 
+    <!-- My Page header meta -->
+    <header class="mypage-top">
+      <div class="mypage-top__title">
+        <span class="material-symbols-outlined">person</span>
+        <h1>My Page</h1>
+      </div>
+      <div class="mypage-top__meta">
+        <div class="goal">
+          <span class="label">목표 점수</span>
+          <span class="value" id="goalScore">850</span>
+        </div>
+        <div class="dday" aria-live="polite">
+          <span class="label">Test D-Day</span>
+          <span class="value" id="dDay">D-30</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="mypage container">
+      <!-- 학습 통계 -->
+      <section class="card stats">
+        <h2>학습 통계</h2>
+        <div class="stats__grid">
+          <!-- 주간 학습 시간 -->
+          <div class="panel week">
+            <h3>주간 학습 시간</h3>
+            <div class="bars" role="img" aria-label="월~일 학습 시간 막대 그래프">
+              <!-- data-value = 학습시간(시간). 최대 5시간 스케일 -->
+              <div class="bar" data-day="월" data-value="2.5"></div>
+              <div class="bar" data-day="화" data-value="1.0"></div>
+              <div class="bar" data-day="수" data-value="3.0"></div>
+              <div class="bar" data-day="목" data-value="1.5"></div>
+              <div class="bar" data-day="금" data-value="4.0"></div>
+              <div class="bar" data-day="토" data-value="0.8"></div>
+              <div class="bar" data-day="일" data-value="2.0"></div>
+            </div>
+            <div class="legend">
+              <span class="dot"></span>
+              <span>최대 5시간 기준</span>
+            </div>
+          </div>
+
+          <!-- 정답률 -->
+          <div class="panel accuracy">
+            <h3>정답률</h3>
+            <div class="ring" role="img" aria-label="정답률 78%">
+              <div class="ring__progress" style="--p:78"></div>
+              <div class="ring__center">
+                <strong id="accuracyVal">78%</strong>
+                <span>최근 7일</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 스트릭 -->
+          <div class="panel streak">
+            <h3>스트릭</h3>
+            <div class="streak__box">
+              <span class="streak__icon material-symbols-outlined" aria-hidden="true">local_fire_department</span>
+              <div class="streak__meta">
+                <strong id="streakDays">12</strong>
+                <span>연속 학습 일수</span>
+              </div>
+            </div>
+            <div class="streak__tips">연속 14일 달성 시 배지 지급</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 설정 -->
+      <section class="card settings">
+        <h2>설정</h2>
+        <form class="settings__grid" onsubmit="return false">
+          <div class="field toggle">
+            <label for="pushToggle">푸시 알림</label>
+            <input type="checkbox" id="pushToggle" checked />
+            <span class="switch" aria-hidden="true"></span>
+          </div>
+
+          <div class="field select">
+            <label for="langSelect">언어</label>
+            <select id="langSelect">
+              <option value="ko" selected>한국어</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="ja">日本語</option>
+            </select>
+          </div>
+
+          <div class="field select">
+            <label for="themeSelect">테마</label>
+            <select id="themeSelect">
+              <option value="light" selected>라이트</option>
+              <option value="dark">다크</option>
+              <option value="system">시스템</option>
+            </select>
+          </div>
+        </form>
+      </section>
+    </main>
+
     <!-- footer -->
     <div class="footer">
       <div class="footerOption">
-        <a href="../mainPage/index.html"
-          ><span class="material-symbols-outlined"> home </span></a
-        >
+        <a href="../mainPage/index.html"><span class="material-symbols-outlined">home</span></a>
       </div>
       <div class="footerOption">
-        <a href="../secPage/index.html"
-          ><span class="material-symbols-outlined"> quiz </span></a
-        >
+        <a href="../secPage/index.html"><span class="material-symbols-outlined">quiz</span></a>
       </div>
       <div class="footerOption">
-        <a href="../thirdPage/index.html"
-          ><span class="material-symbols-outlined"> match_case </span></a
-        >
+        <a href="../thirdPage/index.html"><span class="material-symbols-outlined">match_case</span></a>
       </div>
       <div class="footerOption">
-        <a href="../fourthPage/index.html"
-          ><span class="material-symbols-outlined">import_contacts </span></a
-        >
+        <a href="../fourthPage/index.html"><span class="material-symbols-outlined">import_contacts</span></a>
       </div>
       <div class="footerOption">
-        <a href="../LastPage/index.html"><span class="material-symbols-outlined"> person </span></a>
+        <a href="../LastPage/index.html"><span class="material-symbols-outlined">person</span></a>
       </div>
     </div>
+
+    <script>
+      // 막대 그래프 높이 반영 (최대 5시간 → 100%)
+      const MAX_HOURS = 5;
+      document.querySelectorAll(".bar").forEach((bar) => {
+        const val = parseFloat(bar.dataset.value || "0");
+        const pct = Math.max(0, Math.min(100, (val / MAX_HOURS) * 100));
+        bar.style.setProperty("--h", pct);
+        bar.setAttribute("title", `${bar.dataset.day}: ${val}시간`);
+      });
+
+      // D-Day 계산: 오늘부터 30일 뒤 예시
+      function updateDDay(targetDate) {
+        const now = new Date();
+        const diff = Math.ceil((targetDate - now) / (1000 * 60 * 60 * 24));
+        const val = diff > 0 ? `D-${diff}` : diff === 0 ? "D-Day" : `D+${Math.abs(diff)}`;
+        document.getElementById("dDay").textContent = val;
+      }
+      const target = new Date();
+      target.setDate(target.getDate() + 30);
+      updateDDay(target);
+
+      // 푸시 토글 접근성 보조
+      const pushToggle = document.getElementById("pushToggle");
+      pushToggle.addEventListener("change", (e) => {
+        e.target.setAttribute("aria-pressed", e.target.checked ? "true" : "false");
+      });
+
+      // 테마 적용: body에 data-theme 넣기
+      const themeSelect = document.getElementById("themeSelect");
+      function applyTheme(mode) {
+        if (mode === "system") {
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.body.dataset.theme = prefersDark ? "dark" : "light";
+        } else {
+          document.body.dataset.theme = mode;
+        }
+      }
+      themeSelect.addEventListener("change", (e) => applyTheme(e.target.value));
+      applyTheme("light");
+    </script>
   </body>
 </html>
