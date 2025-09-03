@@ -1,11 +1,35 @@
 :root {
-  --bg: #f5f7fb;
-  --card: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --line: #e5e7eb;
-  --primary: #1f4fff; /* 딥블루 */
-  --primary-ink: #e9efff; /* 연한 블루 */
+  --bg: #0b1220;              
+  --card: #0f172a;
+  --text: #e5e7eb;
+  --muted: #93a3b8;
+  --line: #1f2a44;
+  --primary: #4f7cff;         
+  --primary-ink: #112244;
+
+    /* 새 파레트 */
+  --nav-start: #0b1020;       
+  --nav-end:   #182a5a;       
+  --card-start:#2b2e83;       
+  --card-end:  #11c7c5;       
+  --card-ring: rgba(255,255,255,0.16);
+  --card-glow: rgba(17,199,197,0.23);
+}
+
+
+/* 다크 모드 변수 (theme=dark) */
+body[data-theme="dark"] {
+  --bg: #0b0c0f;
+  --card: #11131a;
+  --text: #e6e8ef;
+  --muted: #a7adbb;
+  --line: #232631;
+  --primary: #4f8cff;
+  --primary-ink: #17223e;
+
+  --ring-bg: #1a1d26;
+  --bar: #4f8cff;
+  --bar-grad: linear-gradient(180deg, #8aa8ff, #4f8cff);
 }
 
 * {
@@ -41,7 +65,7 @@ hr {
   margin: 0;
 }
 
-/* 안전영역 패딩 (iOS notch 대응) */
+/* 안전영역 패딩 */
 .safe-top {
   padding-top: env(safe-area-inset-top);
 }
@@ -51,32 +75,27 @@ hr {
 
 /* nav */
 .nav {
-  position: sticky; /* 상단에 고정 */
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  height: 55px; /* 네비게이션 바 높이 */
+  height: 55px;
   display: flex;
-  background: #254995; /* 네이비 배경 */
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px; /* 좌우 여백 */
-  z-index: 1000; /* 다른 요소 위에 표시 */
-}
-.nav .icons {
-  width: 60px; /* nav 높이에 맞춤 */
-  height: 60px; /* nav 높이에 맞춤 */
-  margin-left: -20px;
-  margin-top: 5px;
-  display: flex;
-  align-items: center; /* 세로 가운데 정렬 */
-  justify-content: center; /* 가로 가운데 정렬 */
+  padding: 0 16px;
+  z-index: 1000;
+
+  /* 새 컬러 */
+  background: linear-gradient(135deg, var(--nav-start), var(--nav-end));
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.35);
 }
 
 .nav .icons .material-symbols-outlined {
-  font-size: 45px; /* 토글 버튼과 균형 맞춤 */
-  color: #fff; /* 흰색으로 통일 */
-  line-height: 1;
+  font-size: 45px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
 
 .nav .toggle {
@@ -84,19 +103,11 @@ hr {
   height: 28px;
   padding-left: 50px;
   background: url("images/toggle.png") no-repeat center center;
-  background-size: contain; /* 이미지가 잘 맞게 조정 */
-  cursor: pointer; /* 손가락 모양 커서 */
+  background-size: contain;
+  cursor: pointer;
 }
 
-.header a:first-child {
-  background: var(--primary-ink);
-  color: var(--primary);
-  border-color: #dbe3ff;
-}
-
-/* -----------------------
-   Footer (탭바)
-------------------------*/
+/* Footer (탭바) */
 .footer {
   position: fixed;
   left: 0;
@@ -125,14 +136,79 @@ hr {
 }
 .footerOption .material-symbols-outlined {
   font-size: 28px;
-  color: #6b7280; /* 비활성 회색 */
+  color: #6b7280;
   transition: color 0.2s ease, transform 0.1s ease;
 }
 .footerOption a:active .material-symbols-outlined {
   transform: scale(0.92);
 }
-
-/* 세 번째 아이템을 '선택됨'처럼 강조 */
-.footerOption:nth-of-type(3) .material-symbols-outlined {
+/* 현재 탭 강조: 마지막(마이) 탭 활성화로 가정 */
+.footerOption:last-of-type .material-symbols-outlined {
   color: var(--primary);
 }
+
+/* -----------------------
+   My Page layout
+------------------------*/
+.container {
+  width: min(980px, 100%);
+  margin: 12px auto 90px;
+  padding: 0 16px;
+}
+
+.mypage-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+}
+.mypage-top__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mypage-top__title h1 {
+  margin: 0;
+  font-size: 20px;
+}
+.mypage-top__title .material-symbols-outlined {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.mypage-top__meta {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.mypage-top .label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+}
+.mypage-top .value {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+}
+.mypage-top .dday .value {
+  color: var(--primary);
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
+}
+.card + .card {
+  margin-top: 12px;
+}
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
