@@ -142,7 +142,7 @@ hr {
 .footerOption a:active .material-symbols-outlined {
   transform: scale(0.92);
 }
-/* 현재 탭 강조: 4번째 */
+/* 네 번째 아이템을 '선택됨'처럼 강조 */
 .footerOption:nth-of-type(4) .material-symbols-outlined {
   color: var(--primary);
 }
