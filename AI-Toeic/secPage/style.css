@@ -94,16 +94,136 @@ hr {
   border-color: #dbe3ff;
 }
 /* card */
+/* 기본 카드 스타일 (요청한 그대로) */
 .card{
-    width: 90%;
-    max-width: 470px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
-    color: #fff;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 35px;
-    text-align: center;
+  width: 90%;
+  max-width: 470px;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  color: #fff;
+  margin: 100px auto 100px;
+  border-radius: 20px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
 }
+
+/* 상단 패턴/토픽 배지 */
+.badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.badge{
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  backdrop-filter: blur(2px);
+}
+
+/* 본문 */
+.en{
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 10px 0 6px;
+  word-break: keep-all;
+}
+.ko{
+  font-size: 16px;
+  line-height: 1.5;
+  color: #eaeefc;
+  opacity: 0.95;
+  margin-bottom: 8px;
+}
+.hidden{ display: none; }
+
+/* 선택지/해설 */
+.choices{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.choice{
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+.choice.correct{ outline: 2px solid #b9ffcf; }
+.choice.wrong{ outline: 2px solid #ffd0d0; }
+
+.explain{
+  background: rgba(0,0,0,0.22);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* 컨트롤 버튼 */
+.controls{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #444;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn.ghost{
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* 인덱스/진행바 */
+.progress{
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* 상단 필터 바 */
+.filters{
+  width: 90%;
+  max-width: 470px;
+  margin: 12px auto 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.select{
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111827;
+  font-size: 14px;
+}
+
+/* 반응형 미세 튜닝 */
+@media (max-width: 360px){
+  .choices{ grid-template-columns: 1fr; }
+}
+
 
 /* -----------------------
    Footer (탭바)

@@ -1,0 +1,708 @@
+{
+  "meta": {
+    "version": "1.0",
+    "schema": "toeic-sentences-v1",
+    "createdAt": "2025-09-03",
+    "locale": "en-KR",
+    "source": "mock"
+  },
+  "sentences": [
+    {
+      "id": "S001",
+      "part": 5,
+      "level": "easy",
+      "topic": "meeting",
+      "pattern": "be scheduled to + V",
+      "text": "The quarterly meeting is scheduled to begin at 2 p.m.",
+      "translation_ko": "분기 회의는 오후 2시에 시작될 예정입니다.",
+      "cloze": "The quarterly meeting is scheduled to ______ at 2 p.m.",
+      "answer": "begin",
+      "distractors": [
+        "beginning",
+        "to begin",
+        "began"
+      ],
+      "explanation": "After 'be scheduled to', use the base verb.",
+      "audio": "audio/en/S001.mp3",
+      "tags": [
+        "schedule",
+        "meeting",
+        "grammar"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S002",
+      "part": 5,
+      "level": "easy",
+      "topic": "logistics",
+      "pattern": "due to + N",
+      "text": "Due to heavy traffic, the delivery arrived two hours late.",
+      "translation_ko": "교통 체증으로 인해 배송이 두 시간 늦게 도착했습니다.",
+      "cloze": "Due ______ heavy traffic, the delivery arrived two hours late.",
+      "answer": "to",
+      "distractors": [
+        "for",
+        "of",
+        "with"
+      ],
+      "explanation": "'Due to' must be followed by a noun phrase.",
+      "audio": "audio/en/S002.mp3",
+      "tags": [
+        "cause",
+        "preposition"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S003",
+      "part": 5,
+      "level": "medium",
+      "topic": "reporting",
+      "pattern": "request that + base V (subjunctive)",
+      "text": "The manager requested that all employees submit their reports by Friday.",
+      "translation_ko": "관리자는 모든 직원에게 금요일까지 보고서를 제출하라고 요청했습니다.",
+      "cloze": "The manager requested that all employees ______ their reports by Friday.",
+      "answer": "submit",
+      "distractors": [
+        "submits",
+        "submitted",
+        "to submit"
+      ],
+      "explanation": "In subjunctive, use base verb after 'requested that'.",
+      "audio": "audio/en/S003.mp3",
+      "tags": [
+        "subjunctive",
+        "deadline"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S004",
+      "part": 5,
+      "level": "easy",
+      "topic": "sales",
+      "pattern": "relative clause (who)",
+      "text": "We will offer a discount to customers who purchase more than ten units.",
+      "translation_ko": "열 개 이상 구매하는 고객에게 할인해 드립니다.",
+      "cloze": "We will offer a discount to customers ______ purchase more than ten units.",
+      "answer": "who",
+      "distractors": [
+        "whom",
+        "which",
+        "what"
+      ],
+      "explanation": "Use 'who' for people as subject of the relative clause.",
+      "audio": "audio/en/S004.mp3",
+      "tags": [
+        "relative",
+        "sales"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S005",
+      "part": 5,
+      "level": "easy",
+      "topic": "policy",
+      "pattern": "avoid + gerund",
+      "text": "Please avoid using personal devices in the laboratory.",
+      "translation_ko": "연구실에서는 개인 기기 사용을 피해 주세요.",
+      "cloze": "Please avoid ______ personal devices in the laboratory.",
+      "answer": "using",
+      "distractors": [
+        "use",
+        "to use",
+        "used"
+      ],
+      "explanation": "After 'avoid', use a gerund (-ing).",
+      "audio": "audio/en/S005.mp3",
+      "tags": [
+        "gerund",
+        "safety"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S006",
+      "part": 5,
+      "level": "easy",
+      "topic": "policy",
+      "pattern": "since + starting point",
+      "text": "The new policy has been in effect since July.",
+      "translation_ko": "새 정책은 7월부터 시행 중입니다.",
+      "cloze": "The new policy has been in effect ______ July.",
+      "answer": "since",
+      "distractors": [
+        "for",
+        "during",
+        "while"
+      ],
+      "explanation": "Use 'since' with a specific starting time.",
+      "audio": "audio/en/S006.mp3",
+      "tags": [
+        "perfect",
+        "time"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S007",
+      "part": 5,
+      "level": "medium",
+      "topic": "orders",
+      "pattern": "as soon as + present",
+      "text": "As soon as we receive the payment, we will ship your order.",
+      "translation_ko": "결제를 받는 즉시 주문을 발송하겠습니다.",
+      "cloze": "As soon as we ______ the payment, we will ship your order.",
+      "answer": "receive",
+      "distractors": [
+        "received",
+        "will receive",
+        "are receiving"
+      ],
+      "explanation": "Use present tense after 'as soon as' for future condition.",
+      "audio": "audio/en/S007.mp3",
+      "tags": [
+        "future",
+        "condition"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S008",
+      "part": 5,
+      "level": "medium",
+      "topic": "events",
+      "pattern": "although + clause",
+      "text": "Although the seminar was informative, attendance was lower than expected.",
+      "translation_ko": "세미나는 유익했지만 참석자는 예상보다 적었습니다.",
+      "cloze": "________ the seminar was informative, attendance was lower than expected.",
+      "answer": "Although",
+      "distractors": [
+        "Because",
+        "However",
+        "Unless"
+      ],
+      "explanation": "'Although' introduces contrast between two clauses.",
+      "audio": "audio/en/S008.mp3",
+      "tags": [
+        "contrast",
+        "conjunction"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S009",
+      "part": 5,
+      "level": "medium",
+      "topic": "deadlines",
+      "pattern": "prior to + N",
+      "text": "The report must be completed prior to the board meeting.",
+      "translation_ko": "보고서는 이사회 회의 전에 완료되어야 합니다.",
+      "cloze": "The report must be completed ______ the board meeting.",
+      "answer": "prior to",
+      "distractors": [
+        "before to",
+        "previous to",
+        "prior"
+      ],
+      "explanation": "Use 'prior to' as a preposition meaning 'before'.",
+      "audio": "audio/en/S009.mp3",
+      "tags": [
+        "preposition",
+        "time"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S010",
+      "part": 5,
+      "level": "easy",
+      "topic": "recruiting",
+      "pattern": "each of + singular verb",
+      "text": "Each of the candidates has submitted a resume.",
+      "translation_ko": "지원자 각자는 이력서를 제출했습니다.",
+      "cloze": "Each of the candidates ______ submitted a resume.",
+      "answer": "has",
+      "distractors": [
+        "have",
+        "having",
+        "had"
+      ],
+      "explanation": "With 'each of', use a singular verb.",
+      "audio": "audio/en/S010.mp3",
+      "tags": [
+        "subject-verb",
+        "agreement"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S011",
+      "part": 5,
+      "level": "medium",
+      "topic": "technology",
+      "pattern": "be capable of + V-ing",
+      "text": "The device is capable of operating for eight hours on a single charge.",
+      "translation_ko": "이 기기는 한 번 충전으로 8시간 동안 작동할 수 있습니다.",
+      "cloze": "The device is capable of ______ for eight hours on a single charge.",
+      "answer": "operating",
+      "distractors": [
+        "operate",
+        "to operate",
+        "operated"
+      ],
+      "explanation": "After 'capable of', use a gerund.",
+      "audio": "audio/en/S011.mp3",
+      "tags": [
+        "gerund",
+        "ability"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S012",
+      "part": 5,
+      "level": "hard",
+      "topic": "performance",
+      "pattern": "not only ... but also / inversion",
+      "text": "Not only did the company reduce costs, but it also improved quality.",
+      "translation_ko": "회사는 비용을 절감했을 뿐만 아니라 품질도 향상시켰습니다.",
+      "cloze": "Not only ______ the company reduce costs, but it also improved quality.",
+      "answer": "did",
+      "distractors": [
+        "does",
+        "has",
+        "had"
+      ],
+      "explanation": "Inversion after 'Not only' moving auxiliary 'did' before subject.",
+      "audio": "audio/en/S012.mp3",
+      "tags": [
+        "inversion",
+        "correlative"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S013",
+      "part": 5,
+      "level": "medium",
+      "topic": "warranty",
+      "pattern": "only if + condition",
+      "text": "The warranty is valid only if the product is installed by a licensed technician.",
+      "translation_ko": "제품이 공인 기술자에 의해 설치된 경우에만 보증이 유효합니다.",
+      "cloze": "The warranty is valid only ______ the product is installed by a licensed technician.",
+      "answer": "if",
+      "distractors": [
+        "unless",
+        "until",
+        "whether"
+      ],
+      "explanation": "Use 'only if' to state a necessary condition.",
+      "audio": "audio/en/S013.mp3",
+      "tags": [
+        "condition",
+        "warranty"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S014",
+      "part": 5,
+      "level": "easy",
+      "topic": "shipping",
+      "pattern": "that-clause (ensure that)",
+      "text": "Please ensure that the package is handled with care.",
+      "translation_ko": "소포가 조심스럽게 취급되도록 해 주세요.",
+      "cloze": "Please ensure ______ the package is handled with care.",
+      "answer": "that",
+      "distractors": [
+        "what",
+        "which",
+        "who"
+      ],
+      "explanation": "Use 'that' to introduce a noun clause after 'ensure'.",
+      "audio": "audio/en/S014.mp3",
+      "tags": [
+        "noun-clause",
+        "request"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S015",
+      "part": 5,
+      "level": "easy",
+      "topic": "conference",
+      "pattern": "look forward to + V-ing",
+      "text": "We are looking forward to meeting you at the conference.",
+      "translation_ko": "회의에서 뵙기를 기대합니다.",
+      "cloze": "We are looking forward to ______ you at the conference.",
+      "answer": "meeting",
+      "distractors": [
+        "meet",
+        "to meet",
+        "having met"
+      ],
+      "explanation": "After 'look forward to', use a gerund.",
+      "audio": "audio/en/S015.mp3",
+      "tags": [
+        "polite",
+        "gerund"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S016",
+      "part": 5,
+      "level": "medium",
+      "topic": "maintenance",
+      "pattern": "while + clause",
+      "text": "The facility remains closed while the maintenance work is carried out.",
+      "translation_ko": "정비 작업이 진행되는 동안 시설은 계속 폐쇄됩니다.",
+      "cloze": "The facility remains closed ______ the maintenance work is carried out.",
+      "answer": "while",
+      "distractors": [
+        "during",
+        "since",
+        "because"
+      ],
+      "explanation": "'While' connects two clauses happening at the same time.",
+      "audio": "audio/en/S016.mp3",
+      "tags": [
+        "time",
+        "conjunction"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S017",
+      "part": 5,
+      "level": "easy",
+      "topic": "rules",
+      "pattern": "be required to + V",
+      "text": "Employees are required to wear badges at all times.",
+      "translation_ko": "직원들은 항상 배지를 착용해야 합니다.",
+      "cloze": "Employees are ______ to wear badges at all times.",
+      "answer": "required",
+      "distractors": [
+        "requiring",
+        "requirement",
+        "require"
+      ],
+      "explanation": "'Be required to' + base verb expresses obligation.",
+      "audio": "audio/en/S017.mp3",
+      "tags": [
+        "obligation",
+        "policy"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S018",
+      "part": 5,
+      "level": "easy",
+      "topic": "production",
+      "pattern": "for + period with present perfect progressive",
+      "text": "The production line has been operating smoothly for three weeks.",
+      "translation_ko": "생산 라인은 3주 동안 순조롭게 가동되고 있습니다.",
+      "cloze": "The production line has been operating smoothly ______ three weeks.",
+      "answer": "for",
+      "distractors": [
+        "since",
+        "during",
+        "from"
+      ],
+      "explanation": "Use 'for' with a duration; 'since' with a starting point.",
+      "audio": "audio/en/S018.mp3",
+      "tags": [
+        "perfect",
+        "duration"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S019",
+      "part": 5,
+      "level": "medium",
+      "topic": "corporate",
+      "pattern": "whether-clause",
+      "text": "The CEO will announce whether the merger will proceed.",
+      "translation_ko": "CEO는 합병이 진행될지 여부를 발표할 것입니다.",
+      "cloze": "The CEO will announce ______ the merger will proceed.",
+      "answer": "whether",
+      "distractors": [
+        "if",
+        "that",
+        "which"
+      ],
+      "explanation": "Use 'whether' to present alternatives or uncertainty formally.",
+      "audio": "audio/en/S019.mp3",
+      "tags": [
+        "reported-speech",
+        "decision"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S020",
+      "part": 5,
+      "level": "easy",
+      "topic": "customer service",
+      "pattern": "apologize for + N/gerund",
+      "text": "We apologize for any inconvenience this may have caused.",
+      "translation_ko": "이로 인해 불편을 끼쳐 드려 사과드립니다.",
+      "cloze": "We apologize ______ any inconvenience this may have caused.",
+      "answer": "for",
+      "distractors": [
+        "of",
+        "about",
+        "to"
+      ],
+      "explanation": "Use 'apologize for' + noun/gerund.",
+      "audio": "audio/en/S020.mp3",
+      "tags": [
+        "polite",
+        "service"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S021",
+      "part": 5,
+      "level": "easy",
+      "topic": "training",
+      "pattern": "because of + N",
+      "text": "The training was postponed because of the storm.",
+      "translation_ko": "교육은 폭풍으로 인해 연기되었습니다.",
+      "cloze": "The training was postponed ______ the storm.",
+      "answer": "because of",
+      "distractors": [
+        "because",
+        "due",
+        "owing"
+      ],
+      "explanation": "'Because of' + noun; 'because' + clause.",
+      "audio": "audio/en/S021.mp3",
+      "tags": [
+        "cause",
+        "preposition"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S022",
+      "part": 5,
+      "level": "medium",
+      "topic": "hiring",
+      "pattern": "adverb form",
+      "text": "Candidates must be able to work independently.",
+      "translation_ko": "지원자는 독립적으로 일할 수 있어야 합니다.",
+      "cloze": "Candidates must be able to work ______.",
+      "answer": "independently",
+      "distractors": [
+        "independent",
+        "independence",
+        "independently of"
+      ],
+      "explanation": "Use an adverb to modify 'work'.",
+      "audio": "audio/en/S022.mp3",
+      "tags": [
+        "parts-of-speech",
+        "adverb"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S023",
+      "part": 5,
+      "level": "easy",
+      "topic": "refund",
+      "pattern": "within + period",
+      "text": "The refund will be processed within five business days.",
+      "translation_ko": "환불은 영업일 기준 5일 이내에 처리됩니다.",
+      "cloze": "The refund will be processed ______ five business days.",
+      "answer": "within",
+      "distractors": [
+        "by",
+        "during",
+        "for"
+      ],
+      "explanation": "'Within' indicates a time limit not exceeding a period.",
+      "audio": "audio/en/S023.mp3",
+      "tags": [
+        "time",
+        "service"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    },
+    {
+      "id": "S024",
+      "part": 5,
+      "level": "easy",
+      "topic": "safety",
+      "pattern": "in case of + N",
+      "text": "Please contact customer service in case of an emergency.",
+      "translation_ko": "비상시에는 고객센터로 연락해 주세요.",
+      "cloze": "Please contact customer service ______ an emergency.",
+      "answer": "in case of",
+      "distractors": [
+        "in case",
+        "in the case",
+        "in spite of"
+      ],
+      "explanation": "Use 'in case of' + noun to describe an emergency plan.",
+      "audio": "audio/en/S024.mp3",
+      "tags": [
+        "contingency",
+        "preposition"
+      ],
+      "spaced": {
+        "interval": 0,
+        "repetitions": 0,
+        "ef": 2.5,
+        "nextReview": null
+      },
+      "source": "mock"
+    }
+  ]
+}
