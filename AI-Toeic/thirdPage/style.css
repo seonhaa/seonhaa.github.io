@@ -142,8 +142,8 @@ hr {
 .footerOption a:active .material-symbols-outlined {
   transform: scale(0.92);
 }
-/* 현재 탭 강조: 마지막(마이) 탭 활성화로 가정 */
-.footerOption:last-of-type .material-symbols-outlined {
+/* 현재 탭 강조 3번째 */
+.footerOption:nth-of-type(3) .material-symbols-outlined {
   color: var(--primary);
 }
 
