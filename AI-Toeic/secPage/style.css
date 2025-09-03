@@ -1,11 +1,19 @@
 :root {
-  --bg: #f5f7fb;
-  --card: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --line: #e5e7eb;
-  --primary: #1f4fff; /* 딥블루 */
-  --primary-ink: #e9efff; /* 연한 블루 */
+  --bg: #0b1220;              
+  --card: #0f172a;
+  --text: #e5e7eb;
+  --muted: #93a3b8;
+  --line: #1f2a44;
+  --primary: #4f7cff;         
+  --primary-ink: #112244;
+
+    /* 새 파레트 */
+  --nav-start: #0b1020;       
+  --nav-end:   #182a5a;       
+  --card-start:#2b2e83;       
+  --card-end:  #11c7c5;       
+  --card-ring: rgba(255,255,255,0.16);
+  --card-glow: rgba(17,199,197,0.23);
 }
 
 * {
@@ -51,32 +59,27 @@ hr {
 
 /* nav */
 .nav {
-  position: sticky; /* 상단에 고정 */
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  height: 55px; /* 네비게이션 바 높이 */
+  height: 55px;
   display: flex;
-  background: #254995; /* 네이비 배경 */
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px; /* 좌우 여백 */
-  z-index: 1000; /* 다른 요소 위에 표시 */
-}
-.nav .icons {
-  width: 60px; /* nav 높이에 맞춤 */
-  height: 60px; /* nav 높이에 맞춤 */
-  margin-left: -20px;
-  margin-top: 5px;
-  display: flex;
-  align-items: center; /* 세로 가운데 정렬 */
-  justify-content: center; /* 가로 가운데 정렬 */
+  padding: 0 16px;
+  z-index: 1000;
+
+  /* 새 컬러 */
+  background: linear-gradient(135deg, var(--nav-start), var(--nav-end));
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.35);
 }
 
 .nav .icons .material-symbols-outlined {
-  font-size: 45px; /* 토글 버튼과 균형 맞춤 */
-  color: #fff; /* 흰색으로 통일 */
-  line-height: 1;
+  font-size: 45px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
 
 .nav .toggle {
@@ -94,17 +97,28 @@ hr {
   border-color: #dbe3ff;
 }
 /* card */
-/* 기본 카드 스타일 (요청한 그대로) */
 .card{
   width: 90%;
   max-width: 470px;
-  background: linear-gradient(135deg, #00feba, #5b548a);
+
+  /* 입체감 있는 이중 그라디언트 + 라이트 글로우 */
+  background:
+    radial-gradient(900px 600px at -10% -30%, rgba(255,255,255,0.12), transparent 40%),
+    linear-gradient(135deg, var(--card-start), var(--card-end));
   color: #fff;
+
   margin: 100px auto 100px;
   border-radius: 20px;
   padding: 24px;
   text-align: left;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+
+  /* 유리감 + 네온 링 */
+  border: 1px solid var(--card-ring);
+  box-shadow:
+    0 14px 34px rgba(2, 6, 23, 0.45),
+    0 0 0 1px rgba(255,255,255,0.06) inset,
+    0 10px 30px var(--card-glow);
+  backdrop-filter: saturate(1.1);
 }
 
 /* 상단 패턴/토픽 배지 */
