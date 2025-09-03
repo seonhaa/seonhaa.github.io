@@ -1,16 +1,21 @@
 :root {
-  --bg: #f5f7fb;
-  --card: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --line: #e5e7eb;
-  --primary: #1f4fff;
-  --primary-ink: #e9efff;
+  --bg: #0b1220;              
+  --card: #0f172a;
+  --text: #e5e7eb;
+  --muted: #93a3b8;
+  --line: #1f2a44;
+  --primary: #4f7cff;         
+  --primary-ink: #112244;
 
-  --ring-bg: #eef2ff;
-  --bar: #1f4fff;
-  --bar-grad: linear-gradient(180deg, #6ea2ff, #1f4fff);
+    /* 새 파레트 */
+  --nav-start: #0b1020;       
+  --nav-end:   #182a5a;       
+  --card-start:#2b2e83;       
+  --card-end:  #11c7c5;       
+  --card-ring: rgba(255,255,255,0.16);
+  --card-glow: rgba(17,199,197,0.23);
 }
+
 
 /* 다크 모드 변수 (theme=dark) */
 body[data-theme="dark"] {
@@ -76,26 +81,23 @@ hr {
   width: 100%;
   height: 55px;
   display: flex;
-  background: #254995;
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
   z-index: 1000;
+
+  /* 새 컬러 */
+  background: linear-gradient(135deg, var(--nav-start), var(--nav-end));
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.35);
 }
-.nav .icons {
-  width: 60px;
-  height: 60px;
-  margin-left: -20px;
-  margin-top: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .nav .icons .material-symbols-outlined {
   font-size: 45px;
   color: #fff;
-  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
+
 .nav .toggle {
   width: 36px;
   height: 28px;
