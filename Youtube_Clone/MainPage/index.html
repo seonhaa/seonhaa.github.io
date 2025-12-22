@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube || Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Material Symbols (Outlined) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+
+    <!-- Font Awesome (CDN 하나만) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="yt-header">
+      <!-- LEFT -->
+      <div class="header-left">
+        <div
+          class="icon-btn menuBar toggle"
+          id="menubar"
+          onclick="toggleHidden()">
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+
+        <a class="logo" href="../MainPage/index.html" aria-label="YouTube 홈">
+          <i class="fab fa-youtube" aria-hidden="true"></i>
+          <span class="title">YouTube</span>
+          <span class="region">KR</span>
+        </a>
+      </div>
+
+      <!-- CENTER -->
+      <div class="header-center">
+        <div class="header_search">
+          <div class="search_input">
+            <input type="text" placeholder="검색" aria-label="검색어 입력" />
+            <i class="fa-regular fa-keyboard" aria-hidden="true"></i>
+          </div>
+
+          <!--  button 권장 (클릭영역/키보드 포커스) -->
+          <button class="search_btn" type="button" aria-label="검색">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+        </div>
+
+        <button class="icon-btn mic" type="button" aria-label="음성 검색">
+          <span class="material-symbols-outlined"> mic </span>
+        </button>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="header-right">
+        <button class="icon-btn more" type="button" aria-label="더보기">
+          <span class="material-symbols-outlined">more_vert</span>
+        </button>
+
+        <button class="loginBtn" type="button">
+          <i class="fa-regular fa-circle-user" aria-hidden="true"></i>
+          <span>로그인</span>
+        </button>
+      </div>
+    </header>
+    <div class="layout" id="layout">
+      <!-- sidebar -->
+      <div class="sidebar">
+        <!-- 상단 바 -->
+        <div class="menuBtn">
+          <div class="sidebarOption">
+            <i class="fa-solid fa-house"></i>
+            <h2>홈</h2>
+          </div>
+
+          <div class="sidebarOption">
+            <img src="./src/shorts_image.png" alt="" />
+            <h2>Shorts</h2>
+          </div>
+
+          <div class="sidebarOption">
+            <span class="material-symbols-outlined"> subscriptions </span>
+            <h2>구독</h2>
+          </div>
+
+          <div class="sidebarOption">
+            <i class="fa-regular fa-circle-user"></i>
+            <h2>내 페이지</h2>
+          </div>
+          <!-- 메뉴 토글 클릭시 사라지는 안보이는 영역 -->
+          <div class="hiddenSidebar" id="hiddenSidebar">
+            <div class="sidebarOption write">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <h2>기록</h2>
+            </div>
+            <!-- 로그인 -->
+            <div class="loginEmp">
+              <p>
+                로그인하면 동영상에 좋아요를 표시하고 댓글을 달거나 구독 할 수
+                있습니다.
+              </p>
+              <button class="loginBtn">
+                <i class="fa-regular fa-circle-user"></i>
+                <span>로그인</span>
+              </button>
+            </div>
+
+            <!-- 탐색 -->
+            <div class="moreSearch" id="moreSearch">
+              <h1>탐색</h1>
+              <div class="sidebarOption">
+                <span class="material-symbols-outlined"> local_mall </span>
+                <h2>쇼핑</h2>
+              </div>
+              <div class="sidebarOption">
+                <span class="material-symbols-outlined"> music_note </span>
+                <h2>음악</h2>
+              </div>
+              <div class="sidebarOption">
+                <span class="material-symbols-outlined"> movie </span>
+                <h2>영화</h2>
+              </div>
+              <div
+                class="sidebarOption toggleMore"
+                id="toggleMore"
+                onclick="toggleMoreMenu()">
+                <i class="fa-solid fa-angle-down"></i>
+                <h2>더보기</h2>
+              </div>
+
+              <!-- 사라질 영역 (더보기 눌러야 활성화)-->
+              <div class="moreContent">
+                <div class="sidebarOption">
+                  <span class="material-symbols-outlined"> sensors </span>
+                  <h2>라이브</h2>
+                </div>
+                <div class="sidebarOption">
+                  <span class="material-symbols-outlined">
+                    stadia_controller
+                  </span>
+                  <h2>게임</h2>
+                </div>
+                <div class="sidebarOption">
+                  <span class="material-symbols-outlined"> trophy </span>
+                  <h2>스포츠</h2>
+                </div>
+                <div class="sidebarOption">
+                  <span class="material-symbols-outlined"> school </span>
+                  <h2>학습 프로그램</h2>
+                </div>
+                <div class="sidebarOption">
+                  <span class="material-symbols-outlined"> podcasts </span>
+                  <h2>팟캐스트</h2>
+                </div>
+                <div
+                  class="sidebarOption toggleLess"
+                  id="toggleLess"
+                  onclick="toggleMoreMenu()">
+                  <i class="fa-solid fa-angle-up"></i>
+                  <h2>간략히 보기</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- 유투부 더보기 -->
+            <div class="youtubeMore">
+              <h1>YouTube 더보기</h1>
+              <div class="sidebarOption">
+                <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+                <h2>Youtube Premium</h2>
+              </div>
+              <div class="sidebarOption">
+                <i class="fa-solid fa-circle-play" style="color: #ff0000"></i>
+                <h2>Youtube Music</h2>
+              </div>
+              <div class="sidebarOption">
+                <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+                <h2>Youtube Kids</h2>
+              </div>
+            </div>
+
+            <!-- 설정 -->
+            <div class="option">
+              <div class="sidebarOption">
+                <span class="material-symbols-outlined"> settings </span>
+                <h2>설정</h2>
+              </div>
+              <div class="sidebarOption">
+                <span class="material-symbols-outlined"> flag </span>
+                <h2>신고 기록</h2>
+              </div>
+              <div class="sidebarOption">
+                <span class="material-symbols-outlined"> help </span>
+                <h2>고객센터</h2>
+              </div>
+              <div class="sidebarOption">
+                <span class="material-symbols-outlined">feedback</span>
+                <h2>의견 보내기</h2>
+              </div>
+            </div>
+            <!-- 유튜브 정책 -->
+            <div class="youtubePolicy">
+              쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치
+              나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라
+              아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에
+              추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말
+              대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래
+              쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치
+              나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라
+              아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에
+              추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 비디오 썸네일 & 검색하여 시작하기  -->
+      <div class="post">
+        <div class="searchAndStart">
+          <h2>검색하여 시작하기</h2>
+          <p>
+            내가 좋아할 만한 동영상 피드를 받을 수 있도록 동영상 시청을 시작해
+            보세요
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script type="module" src="script.js"></script>
+    <script>
+      function toggleHidden() {
+        const hiddenSidebar = document.querySelector(".hiddenSidebar");
+        const sidebar = document.querySelector(".sidebar");
+
+        hiddenSidebar.classList.toggle("is-hidden");
+        sidebar.classList.toggle("collapsed");
+      }
+
+      function toggleMoreMenu() {
+        const moreSearch = document.querySelector("#moreSearch");
+        moreSearch.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

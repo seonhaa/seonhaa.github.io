@@ -1,0 +1,367 @@
+:root {
+  /* color */
+  --blue-color: #065fd4;
+  --grey-color: #f8f8f8;
+}
+
+/* base */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ----------------- */
+
+/* ----------------- */
+
+/* ====== 데스크톱 헤더 베이스 ====== */
+.yt-header {
+  height: 56px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #fff;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.icon-btn:hover {
+  background: #f2f2f2;
+}
+
+/* ====== LEFT ====== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #0f0f0f;
+}
+.logo .fa-youtube {
+  color: #ff0000;
+  font-size: 22px;
+}
+.logo .title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+.logo .region {
+  font-size: 10px;
+  color: #606060;
+  margin-left: 2px;
+  transform: translateY(-8px);
+}
+
+/* ====== CENTER (검색 + 마이크) ====== */
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto; /* 가운데만 늘어나게 */
+  justify-content: center;
+}
+
+/* 검색 전체 폭 제한*/
+.header_search {
+  display: flex;
+  align-items: center;
+  width: min(720px, 100%);
+}
+
+/* 검색 입력 영역(왼쪽) */
+.search_input {
+  flex: 1 1 auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-right: none; /*  검색 버튼과 붙게 */
+  border-radius: 20px 0 0 20px;
+}
+
+.search_input input {
+  flex: 1 1 auto; /*  입력창이 남는 공간 다 먹기 */
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+/* 키보드 아이콘(입력창 오른쪽에 붙는 느낌) */
+.search_input .fa-keyboard {
+  color: #606060;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* 검색 버튼(오른쪽) */
+.search_btn {
+  width: 64px;
+  height: 40px;
+  border: 1px solid #d3d3d3;
+  border-radius: 0 20px 20px 0;
+  background: #f8f8f8;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.search_btn:hover {
+  background: #f0f0f0;
+}
+
+.search_btn .material-symbols-outlined {
+  font-size: 24px;
+  color: #0f0f0f;
+}
+
+/* 마이크 버튼 */
+.mic {
+  background: #f2f2f2;
+}
+.mic:hover {
+  background: #e9e9e9;
+}
+.mic i {
+  font-size: 18px;
+  color: #0f0f0f;
+}
+
+/* ====== RIGHT ====== */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto; /* ✅ 오른쪽도 고정 */
+}
+
+/* 공통 로그인 버튼 */
+.loginBtn {
+  height: 40px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  background: #fff;
+  cursor: pointer;
+}
+.loginBtn:hover {
+  background: #f8f8f8;
+}
+
+.loginBtn i {
+  font-size: 18px;
+  color: var(--blue-color);
+}
+.loginBtn span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--blue-color);
+}
+
+/* ------------------ */
+
+/* layout area */
+.layout {
+  display: flex;
+  height: calc(100vh -56px);
+}
+
+/* ------------------ */
+
+/* 사이드 바 구간 나누기 */
+.sidebar {
+  flex: 0.2;
+  height: 100vh;
+  overflow-y: auto; /* 사이드바만 따로 움직이기 */
+  margin-left: 20px;
+  max-width: 220px;
+}
+.sidebar h1 {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+/* 사이드바 하단바 */
+.menuBtn,
+.moreSearch,
+.youtubeMore,
+.option {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+/* .menuBtn .sidebarOption:nth-of-type(1) {
+  background-color: var(--grey-color);
+  border-radius: 10px;
+}
+.menuBtn .sidebarOption:nth-of-type(1):hover {
+  background-color: #e6e6e6;
+} */
+
+/* sidebar */
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 22px;
+}
+.write {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+/* 사이드바 옵션들 */
+.sidebarOption img {
+  width: 25px;
+}
+
+.sidebarOption h2 {
+  font-size: 16px;
+  font-weight: 350;
+  margin-left: 30px;
+}
+
+.sidebarOption:hover {
+  background-color: var(--grey-color);
+  border-radius: 10px;
+}
+
+/* 사이드바 로그인 area */
+.loginEmp {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.loginEmp p {
+  padding-right: 5px;
+}
+
+/* 누르기 전까지 안보일 영역 */
+.moreContent {
+  display: none;
+}
+/* active 시 추가 영역 보임(moreContent) */
+.moreSearch.active .moreContent {
+  display: block;
+}
+/* active 시 더보기 버튼 숨김 */
+.moreSearch.active #toggleMore {
+  display: none;
+}
+
+/* ------------ */
+
+/* post area */
+.post {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin: 14px auto;
+  max-width: 850px;
+}
+.searchAndStart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  gap: 1px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.searchAndStart h2 {
+  margin-top: 10px;
+}
+
+.searchAndStart p {
+  margin: 0;
+}
+
+/* ----------------- */
+/* 메뉴 바 클릭시 줄어듦. (gpt 도움 받음) */
+
+.hiddenSidebar {
+  display: block;
+}
+
+.hiddenSidebar.is-hidden {
+  display: none;
+}
+
+.sidebar.collapsed {
+  margin-left: 0; /* ✅ 왼쪽으로 붙이기 */
+  width: 80px; /* ✅ 유튜브처럼 얇게 */
+  max-width: 80px;
+}
+.sidebar.collapsed .menuBtn .sidebarOption {
+  flex-direction: column; /* ✅ 아이콘 위, 글자 아래 */
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 22px; /* 아이콘 크기(현재랑 비슷) */
+}
+
+/* h2를 아래로 내리고 작게 */
+.sidebar.collapsed .menuBtn .sidebarOption h2 {
+  display: block; /* ✅ 숨기지 말고 보이게 */
+  margin: 6px 0 0 0; /* ✅ 아래로 */
+  font-size: 11px; /* ✅ 작게 */
+  font-weight: 400;
+  text-align: center;
+}
+
+/* 기존에 margin-left:30px 있던 거 제거 */
+.sidebar.collapsed .menuBtn .sidebarOption h2 {
+  margin-left: 0;
+}
+
+/* Shorts 이미지도 가운데 정렬 */
+.sidebar.collapsed .menuBtn .sidebarOption img {
+  margin: 0;
+}
