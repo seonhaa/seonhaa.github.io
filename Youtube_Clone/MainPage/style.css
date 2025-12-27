@@ -1,5 +1,4 @@
 :root {
-  /* color */
   --blue-color: #065fd4;
   --grey-color: #f8f8f8;
 }
@@ -21,17 +20,12 @@ button {
   border: none;
   background-color: inherit;
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ----------------- */
-
-/* ----------------- */
-
-/* ====== 데스크톱 헤더 베이스 ====== */
+/* ====== HEADER ====== */
 .yt-header {
   height: 56px;
   padding: 0 16px;
@@ -40,6 +34,10 @@ a {
   justify-content: space-between;
   gap: 16px;
   background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  border-bottom: 1px solid #eee;
 }
 
 .icon-btn {
@@ -47,8 +45,6 @@ a {
   height: 40px;
   display: grid;
   place-items: center;
-  border: none;
-  background: transparent;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -56,19 +52,16 @@ a {
   background: #f2f2f2;
 }
 
-/* ====== LEFT ====== */
+/* LEFT */
 .header-left {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 0 0 auto;
 }
-
 .logo {
   display: flex;
   align-items: center;
   gap: 6px;
-  text-decoration: none;
   color: #0f0f0f;
 }
 .logo .fa-youtube {
@@ -87,23 +80,20 @@ a {
   transform: translateY(-8px);
 }
 
-/* ====== CENTER (검색 + 마이크) ====== */
+/* CENTER */
 .header-center {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex: 1 1 auto; /* 가운데만 늘어나게 */
+  flex: 1 1 auto;
   justify-content: center;
 }
-
-/* 검색 전체 폭 제한*/
 .header_search {
   display: flex;
   align-items: center;
   width: min(720px, 100%);
 }
 
-/* 검색 입력 영역(왼쪽) */
 .search_input {
   flex: 1 1 auto;
   height: 40px;
@@ -113,27 +103,23 @@ a {
   padding: 0 12px;
   background: #fff;
   border: 1px solid #d3d3d3;
-  border-right: none; /*  검색 버튼과 붙게 */
+  border-right: none;
   border-radius: 20px 0 0 20px;
 }
-
 .search_input input {
-  flex: 1 1 auto; /*  입력창이 남는 공간 다 먹기 */
+  flex: 1 1 auto;
   height: 100%;
   border: none;
   outline: none;
   font-size: 16px;
   background: transparent;
 }
-
-/* 키보드 아이콘(입력창 오른쪽에 붙는 느낌) */
 .search_input .fa-keyboard {
   color: #606060;
   font-size: 18px;
   cursor: pointer;
 }
 
-/* 검색 버튼(오른쪽) */
 .search_btn {
   width: 64px;
   height: 40px;
@@ -147,33 +133,24 @@ a {
 .search_btn:hover {
   background: #f0f0f0;
 }
-
 .search_btn .material-symbols-outlined {
   font-size: 24px;
   color: #0f0f0f;
 }
 
-/* 마이크 버튼 */
 .mic {
   background: #f2f2f2;
 }
 .mic:hover {
   background: #e9e9e9;
 }
-.mic i {
-  font-size: 18px;
-  color: #0f0f0f;
-}
 
-/* ====== RIGHT ====== */
+/* RIGHT */
 .header-right {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 0 0 auto; /* ✅ 오른쪽도 고정 */
 }
-
-/* 공통 로그인 버튼 */
 .loginBtn {
   height: 40px;
   padding: 0 14px;
@@ -188,7 +165,6 @@ a {
 .loginBtn:hover {
   background: #f8f8f8;
 }
-
 .loginBtn i {
   font-size: 18px;
   color: var(--blue-color);
@@ -199,30 +175,28 @@ a {
   color: var(--blue-color);
 }
 
-/* ------------------ */
-
-/* layout area */
+/* ====== LAYOUT ====== */
 .layout {
   display: flex;
-  height: calc(100vh -56px);
+  min-height: calc(100vh - 56px);
 }
 
-/* ------------------ */
-
-/* 사이드 바 구간 나누기 */
+/* ====== SIDEBAR (DESKTOP BASE) ====== */
 .sidebar {
-  flex: 0.2;
-  height: 100vh;
-  overflow-y: auto; /* 사이드바만 따로 움직이기 */
-  margin-left: 20px;
-  max-width: 220px;
+  width: 240px;
+  background: #fff;
+  overflow-y: auto;
+  height: calc(100vh - 56px);
+  position: sticky;
+  top: 56px;
+  border-right: 1px solid #eee;
 }
 .sidebar h1 {
   font-weight: 600;
-  font-size: 25px;
+  font-size: 20px;
+  margin: 16px 12px 8px;
 }
 
-/* 사이드바 하단바 */
 .menuBtn,
 .moreSearch,
 .youtubeMore,
@@ -230,79 +204,62 @@ a {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
 }
-/* .menuBtn .sidebarOption:nth-of-type(1) {
-  background-color: var(--grey-color);
-  border-radius: 10px;
-}
-.menuBtn .sidebarOption:nth-of-type(1):hover {
-  background-color: #e6e6e6;
-} */
 
-/* sidebar */
 .sidebarOption {
   display: flex;
   align-items: center;
   cursor: pointer;
   font-size: 22px;
+  padding: 10px 12px;
+  border-radius: 10px;
 }
+.sidebarOption:hover {
+  background-color: var(--grey-color);
+}
+.sidebarOption img {
+  width: 25px;
+}
+.sidebarOption h2 {
+  font-size: 16px;
+  font-weight: 350;
+  margin: 0 0 0 14px;
+}
+
 .write {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
 }
-/* 사이드바 옵션들 */
-.sidebarOption img {
-  width: 25px;
-}
 
-.sidebarOption h2 {
-  font-size: 16px;
-  font-weight: 350;
-  margin-left: 30px;
-}
-
-.sidebarOption:hover {
-  background-color: var(--grey-color);
-  border-radius: 10px;
-}
-
-/* 사이드바 로그인 area */
 .loginEmp {
   border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding: 10px 12px;
 }
 .loginEmp p {
-  padding-right: 5px;
+  margin: 0 0 10px 0;
 }
 
-/* 누르기 전까지 안보일 영역 */
+/* 더보기 접힘 */
 .moreContent {
   display: none;
 }
-/* active 시 추가 영역 보임(moreContent) */
 .moreSearch.active .moreContent {
   display: block;
 }
-/* active 시 더보기 버튼 숨김 */
 .moreSearch.active #toggleMore {
   display: none;
 }
 
-/* ------------ */
-
-/* post area */
+/* ====== POST ====== */
 .post {
   flex: 1;
-  height: 100%;
+  min-height: calc(100vh - 56px);
   overflow-y: auto;
-  justify-content: center;
-  align-items: center;
   background: #fff;
+  margin: 14px auto;
+  max-width: 850px;
   border: 1px solid #e5e5e5;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  margin: 14px auto;
-  max-width: 850px;
 }
 .searchAndStart {
   display: flex;
@@ -310,58 +267,174 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100%;
-  gap: 1px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.searchAndStart h2 {
-  margin-top: 10px;
+  min-height: 300px;
+  gap: 6px;
+  padding: 40px 16px;
 }
 
-.searchAndStart p {
-  margin: 0;
-}
-
-/* ----------------- */
-/* 메뉴 바 클릭시 줄어듦. (gpt 도움 받음) */
-
-.hiddenSidebar {
-  display: block;
-}
-
-.hiddenSidebar.is-hidden {
-  display: none;
-}
-
+/* ====== DESKTOP: COLLAPSE ====== */
 .sidebar.collapsed {
-  margin-left: 0; /* ✅ 왼쪽으로 붙이기 */
-  width: 80px; /* ✅ 유튜브처럼 얇게 */
-  max-width: 80px;
+  width: 80px;
 }
 .sidebar.collapsed .menuBtn .sidebarOption {
-  flex-direction: column; /* ✅ 아이콘 위, 글자 아래 */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12px 0;
-  font-size: 22px; /* 아이콘 크기(현재랑 비슷) */
+  gap: 6px;
 }
-
-/* h2를 아래로 내리고 작게 */
 .sidebar.collapsed .menuBtn .sidebarOption h2 {
-  display: block; /* ✅ 숨기지 말고 보이게 */
-  margin: 6px 0 0 0; /* ✅ 아래로 */
-  font-size: 11px; /* ✅ 작게 */
+  margin: 0;
+  font-size: 11px;
   font-weight: 400;
   text-align: center;
 }
-
-/* 기존에 margin-left:30px 있던 거 제거 */
-.sidebar.collapsed .menuBtn .sidebarOption h2 {
-  margin-left: 0;
+.sidebar.collapsed .hiddenSidebar {
+  display: none;
 }
 
-/* Shorts 이미지도 가운데 정렬 */
-.sidebar.collapsed .menuBtn .sidebarOption img {
-  margin: 0;
+/* ====== BACKDROP ====== */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.sidebar-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+body.sidebar-lock {
+  overflow: hidden;
+}
+
+/* ====== TABLET/MOBILE: OFF-CANVAS ====== */
+@media (max-width: 1024px) {
+  /* 레이아웃은 계속 보이게 */
+  .layout {
+    display: block;
+  }
+
+  /* ✅ 모바일 기본: 왼쪽 미니 레일(아이콘 4개) */
+  .sidebar {
+    position: fixed;
+    top: 56px; /* 헤더 아래 */
+    left: 0;
+    width: 72px; /* 유튜브처럼 얇게 */
+    height: calc(100vh - 56px);
+    background: #fff;
+    z-index: 1150;
+
+    transform: none; /* ❌ 슬라이드 숨김 제거 */
+    transition: width 0.2s ease;
+    box-shadow: none;
+    border-right: 1px solid #eee;
+  }
+
+  /* ✅ 기본은 4개만 보이게: 상세 메뉴 숨김 */
+  .hiddenSidebar {
+    display: none;
+  }
+
+  /* ✅ 4개 옵션을 아이콘 위 / 글자 아래로 */
+  .sidebar .menuBtn .sidebarOption {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 0;
+  }
+
+  .sidebar .menuBtn .sidebarOption h2 {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  /* ✅ 메인 컨텐츠가 레일에 가리지 않게 */
+  .post {
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    padding-left: 72px; /* 또는 margin-left:72px; */
+  }
+
+  /* ✅ 햄버거 눌렀을 때 */
+  .sidebar.is-open {
+    width: 240px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar.is-open .hiddenSidebar {
+    display: block;
+  }
+
+  /* ✅ 오픈 중엔 메뉴를 원래처럼(가로 정렬) */
+  .sidebar.is-open .menuBtn .sidebarOption {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 10px 12px;
+  }
+
+  .sidebar.is-open .menuBtn .sidebarOption h2 {
+    margin-left: 14px;
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+/* ====== MOBILE(<=768): 하단탭 ====== */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: min(82vw, 320px);
+  }
+
+  /* 하단 탭 보이기 */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 56px;
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    z-index: 1200;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .mb-item {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    cursor: pointer;
+  }
+  .mb-item .material-symbols-outlined {
+    font-size: 24px;
+    color: #0f0f0f;
+  }
+  .mb-item span:last-child {
+    font-size: 11px;
+    color: #0f0f0f;
+  }
+
+  /* 하단탭에 컨텐츠 가리지 않게 */
+  .post {
+    padding-bottom: 56px;
+  }
 }
