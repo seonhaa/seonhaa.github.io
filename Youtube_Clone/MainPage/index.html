@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Youtube || Clone</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Material Symbols (Outlined) -->
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
 
-    <!-- Font Awesome (CDN 하나만) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       referrerpolicy="no-referrer" />
   </head>
+
   <body>
     <!-- header -->
     <header class="yt-header">
       <!-- LEFT -->
       <div class="header-left">
-        <div
-          class="icon-btn menuBar toggle"
-          id="menubar"
-          onclick="toggleHidden()">
+        <div class="icon-btn menuBar" id="menubar" onclick="toggleHidden()">
           <span class="material-symbols-outlined">menu</span>
         </div>
 
@@ -43,7 +40,6 @@
             <i class="fa-regular fa-keyboard" aria-hidden="true"></i>
           </div>
 
-          <!--  button 권장 (클릭영역/키보드 포커스) -->
           <button class="search_btn" type="button" aria-label="검색">
             <span class="material-symbols-outlined">search</span>
           </button>
@@ -66,10 +62,13 @@
         </button>
       </div>
     </header>
+
+    <!-- 모바일 오버레이 배경 -->
+    <div class="sidebar-backdrop"></div>
+
     <div class="layout" id="layout">
       <!-- sidebar -->
-      <div class="sidebar">
-        <!-- 상단 바 -->
+      <aside class="sidebar">
         <div class="menuBtn">
           <div class="sidebarOption">
             <i class="fa-solid fa-house"></i>
@@ -90,13 +89,14 @@
             <i class="fa-regular fa-circle-user"></i>
             <h2>내 페이지</h2>
           </div>
-          <!-- 메뉴 토글 클릭시 사라지는 안보이는 영역 -->
-          <div class="hiddenSidebar" id="hiddenSidebar">
+
+          <!-- 기존 hiddenSidebar는 그대로 둬도 됨(데스크톱 상세 영역) -->
+          <div class="hiddenSidebar">
             <div class="sidebarOption write">
               <i class="fa-solid fa-clock-rotate-left"></i>
               <h2>기록</h2>
             </div>
-            <!-- 로그인 -->
+
             <div class="loginEmp">
               <p>
                 로그인하면 동영상에 좋아요를 표시하고 댓글을 달거나 구독 할 수
@@ -108,7 +108,6 @@
               </button>
             </div>
 
-            <!-- 탐색 -->
             <div class="moreSearch" id="moreSearch">
               <h1>탐색</h1>
               <div class="sidebarOption">
@@ -123,6 +122,7 @@
                 <span class="material-symbols-outlined"> movie </span>
                 <h2>영화</h2>
               </div>
+
               <div
                 class="sidebarOption toggleMore"
                 id="toggleMore"
@@ -131,7 +131,6 @@
                 <h2>더보기</h2>
               </div>
 
-              <!-- 사라질 영역 (더보기 눌러야 활성화)-->
               <div class="moreContent">
                 <div class="sidebarOption">
                   <span class="material-symbols-outlined"> sensors </span>
@@ -155,6 +154,7 @@
                   <span class="material-symbols-outlined"> podcasts </span>
                   <h2>팟캐스트</h2>
                 </div>
+
                 <div
                   class="sidebarOption toggleLess"
                   id="toggleLess"
@@ -165,7 +165,6 @@
               </div>
             </div>
 
-            <!-- 유투부 더보기 -->
             <div class="youtubeMore">
               <h1>YouTube 더보기</h1>
               <div class="sidebarOption">
@@ -182,7 +181,6 @@
               </div>
             </div>
 
-            <!-- 설정 -->
             <div class="option">
               <div class="sidebarOption">
                 <span class="material-symbols-outlined"> settings </span>
@@ -201,23 +199,13 @@
                 <h2>의견 보내기</h2>
               </div>
             </div>
-            <!-- 유튜브 정책 -->
-            <div class="youtubePolicy">
-              쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치
-              나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라
-              아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에
-              추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말
-              대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래
-              쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치
-              나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래 쏼라쏼라
-              아무말 대잔치 나중에 추가할래 쏼라쏼라 아무말 대잔치 나중에
-              추가할래 쏼라쏼라 아무말 대잔치 나중에 추가할래
-            </div>
+
+            <div class="youtubePolicy">쏼라쏼라 아무말...</div>
           </div>
         </div>
-      </div>
+      </aside>
 
-      <!-- 비디오 썸네일 & 검색하여 시작하기  -->
+      <!-- main -->
       <div class="post">
         <div class="searchAndStart">
           <h2>검색하여 시작하기</h2>
@@ -229,21 +217,26 @@
       </div>
     </div>
 
-    <!-- JS -->
-    <script type="module" src="script.js"></script>
-    <script>
-      function toggleHidden() {
-        const hiddenSidebar = document.querySelector(".hiddenSidebar");
-        const sidebar = document.querySelector(".sidebar");
+    <!-- 모바일 하단 탭(<=768에서만 보임) -->
+    <nav class="mobile-bottom-nav" aria-label="모바일 하단 메뉴">
+      <button type="button" class="mb-item">
+        <span class="material-symbols-outlined">home</span>
+        <span>홈</span>
+      </button>
+      <button type="button" class="mb-item">
+        <span class="material-symbols-outlined">smart_display</span>
+        <span>Shorts</span>
+      </button>
+      <button type="button" class="mb-item">
+        <span class="material-symbols-outlined">subscriptions</span>
+        <span>구독</span>
+      </button>
+      <button type="button" class="mb-item">
+        <span class="material-symbols-outlined">account_circle</span>
+        <span>내 페이지</span>
+      </button>
+    </nav>
 
-        hiddenSidebar.classList.toggle("is-hidden");
-        sidebar.classList.toggle("collapsed");
-      }
-
-      function toggleMoreMenu() {
-        const moreSearch = document.querySelector("#moreSearch");
-        moreSearch.classList.toggle("active");
-      }
-    </script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
