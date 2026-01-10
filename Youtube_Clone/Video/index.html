@@ -16,14 +16,48 @@
       referrerpolicy="no-referrer" />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <span class="material-symbols-outlined"> youtube_activity </span>
-        <span class="title">Youtube</span>
+    <header class="yt-header">
+      <!-- LEFT -->
+      <div class="header-left">
+        <div class="icon-btn menuBar" id="menubar" onclick="toggleHidden()">
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+
+        <a class="logo" href="../MainPage/index.html" aria-label="YouTube 홈">
+          <i class="fab fa-youtube" aria-hidden="true"></i>
+          <span class="title">YouTube</span>
+          <span class="region">KR</span>
+        </a>
       </div>
-      <div class="icons">
-        <span class="material-symbols-outlined"> search </span>
-        <span class="material-symbols-outlined"> more_vert </span>
+
+      <!-- CENTER -->
+      <div class="header-center">
+        <div class="header_search">
+          <div class="search_input">
+            <input type="text" placeholder="검색" aria-label="검색어 입력" />
+            <i class="fa-regular fa-keyboard" aria-hidden="true"></i>
+          </div>
+
+          <button class="search_btn" type="button" aria-label="검색">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+        </div>
+
+        <button class="icon-btn mic" type="button" aria-label="음성 검색">
+          <span class="material-symbols-outlined"> mic </span>
+        </button>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="header-right">
+        <button class="icon-btn more" type="button" aria-label="더보기">
+          <span class="material-symbols-outlined">more_vert</span>
+        </button>
+
+        <button class="loginBtn" type="button">
+          <i class="fa-regular fa-circle-user" aria-hidden="true"></i>
+          <span>로그인</span>
+        </button>
       </div>
     </header>
 
@@ -34,30 +68,188 @@
 
     <!-- information -->
     <section class="info">
-      <div class="metadata">
-        <ul class="hashtags"></ul>
-        <li>#hwang</li>
-        <li>#theclimb</li>
-        <li>#hongdae</li>
-      </div>
       <div class="titleAndBtn">
         <span class="title"
-          >황선하 클라이밍(2025.11.23) 파란색 문제 클리어!! | hwang seonha
-          climbing blue problem clear!!!</span
+          >[클라이밍] 황선하 클라이밍(2025.11.23) 파란색 문제 클리어!! | hwang
+          seonha climbing blue problem clear!!!</span
         >
         <button class="moreBtn">
           <span class="material-symbols-outlined"> arrow_drop_down </span>
         </button>
       </div>
-      <div class="action">
-        <i class="fa-regular fa-thumbs-up"></i>
-        <i class="fa-regular fa-thumbs-down"></i>
-        <i class="fa-light fa-share">공유</i>
-        <i class="fa-regular fa-bookmark">저장</i>
+      <div class="view">
+        <span class="view">조회수 1회 1년 전</span>
       </div>
-      <div class="channel"></div>
+
+      <div class="channel">
+        <div class="yt-profile">
+          <div class="metadata">
+            <img src="./src/avatar.jpeg" alt="프로필 사진" />
+            <div class="info">
+              <span class="name">황선하</span>
+              <span class="subscriber">구독자 1명</span>
+            </div>
+          </div>
+          <button class="subscribe">
+            <span>구독</span>
+          </button>
+        </div>
+
+        <ul class="action">
+          <li>
+            <button>
+              <i class="fa-regular fa-thumbs-up"></i> <span>1.2만</span>
+            </button>
+          </li>
+          <li>
+            <button><i class="fa-regular fa-thumbs-down"></i></button>
+          </li>
+          <li>
+            <button>
+              <i class="fa-solid fa-share"> <span>공유</span></i>
+            </button>
+          </li>
+          <li>
+            <button>
+              <i class="fa-regular fa-bookmark"> <span>저장</span></i>
+            </button>
+          </li>
+          <li>
+            <button>
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+              <span>Thanks</span>
+            </button>
+          </li>
+        </ul>
+      </div>
     </section>
-    <section class="upNext"></section>
-    <script type="module" src="script.js"></script>
+    <section class="upNext">
+      <ul class="action">
+        <li>
+          <button type="button"><span>모두</span></button>
+        </li>
+        <li>
+          <button type="button"><span>학습</span></button>
+        </li>
+        <li>
+          <button type="button"><span>관련 콘텐츠</span></button>
+        </li>
+        <li>
+          <button type="button"><span>추천</span></button>
+        </li>
+      </ul>
+
+      <ul class="list">
+        <li class="item">
+          <a class="itemLink" href="#">
+            <div class="thumb">
+              <img src="./src/thumbnail.jpeg" alt="클라이밍보다 잘하는 딥스" />
+            </div>
+            <div class="detal">
+              <div class="info">
+                <span class="title">클라이밍보다 잘하는 딥스</span>
+                <span class="name">황맨</span>
+                <span class="view">조회수 4.4만회 • 5년 전</span>
+              </div>
+              <button class="moreBtn" type="button" aria-label="more">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </a>
+        </li>
+        <li class="item">
+          <a class="itemLink" href="#">
+            <div class="thumb">
+              <img src="./src/avatar.jpeg" alt="클라이밍보다 잘하는 딥스" />
+            </div>
+            <div class="detal">
+              <div class="info">
+                <span class="title">누렁이 또 왔어요.</span>
+                <span class="name">누렁맨</span>
+                <span class="view">조회수 4.4만회 • 5년 전</span>
+              </div>
+              <button class="moreBtn" type="button" aria-label="more">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </a>
+        </li>
+        <li class="item">
+          <a class="itemLink" href="#">
+            <div class="thumb">
+              <img src="./src/avatar.jpeg" alt="클라이밍보다 잘하는 딥스" />
+            </div>
+            <div class="detal">
+              <div class="info">
+                <span class="title">누렁이 또 왔어요.</span>
+                <span class="name">누렁맨</span>
+                <span class="view">조회수 4.4만회 • 5년 전</span>
+              </div>
+              <button class="moreBtn" type="button" aria-label="more">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </a>
+        </li>
+        <li class="item">
+          <a class="itemLink" href="#">
+            <div class="thumb">
+              <img src="./src/avatar.jpeg" alt="클라이밍보다 잘하는 딥스" />
+            </div>
+            <div class="detal">
+              <div class="info">
+                <span class="title">누렁이 또 왔어요.</span>
+                <span class="name">누렁맨</span>
+                <span class="view">조회수 4.4만회 • 5년 전</span>
+              </div>
+              <button class="moreBtn" type="button" aria-label="more">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </a>
+        </li>
+
+        <li class="item">
+          <a class="itemLink" href="#">
+            <div class="thumb">
+              <img src="./src/thumbnail.jpeg" alt="클라이밍보다 잘하는 딥스" />
+            </div>
+            <div class="detal">
+              <div class="info">
+                <span class="title">클라이밍보다 잘하는 딥스</span>
+                <span class="name">황맨</span>
+                <span class="view">조회수 4.4만회 • 5년 전</span>
+              </div>
+              <button class="moreBtn" type="button" aria-label="more">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </a>
+        </li>
+        <li class="item">
+          <a class="itemLink" href="#">
+            <div class="thumb">
+              <img src="./src/thumbnail.jpeg" alt="클라이밍보다 잘하는 딥스" />
+            </div>
+            <div class="detal">
+              <div class="info">
+                <span class="title">클라이밍보다 잘하는 딥스</span>
+                <span class="name">황맨</span>
+                <span class="view">조회수 4.4만회 • 5년 전</span>
+              </div>
+              <button class="moreBtn" type="button" aria-label="more">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- darkmode (DEMO) -->
+    <button class="darkMode" id="darkMode" onclick="toggleDarkMode()">
+      dark mode
+    </button>
+
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
