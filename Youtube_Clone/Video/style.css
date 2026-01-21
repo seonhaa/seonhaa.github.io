@@ -795,7 +795,7 @@ body.dark-mode .comment__moreBtn:hover {
 
   .sideCol {
     position: sticky;
-    top: 72px;
+    /* top: 72px; */
     height: fit-content;
     margin-top: 10px;
     grid-column: 2;
