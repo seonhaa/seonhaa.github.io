@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -98,14 +98,16 @@
             </div>
 
             <ul class="action">
-              <li>
-                <button>
+              <li class="like_dislike">
+                <button class="like">
                   <i class="fa-regular fa-thumbs-up"></i> <span>1.2만</span>
                 </button>
+
+                <button class="dislike">
+                  <i class="fa-regular fa-thumbs-down"></i>
+                </button>
               </li>
-              <li>
-                <button><i class="fa-regular fa-thumbs-down"></i></button>
-              </li>
+
               <li>
                 <button>
                   <i class="fa-solid fa-share"> <span>공유</span></i>
@@ -116,10 +118,15 @@
                   <i class="fa-regular fa-bookmark"> <span>저장</span></i>
                 </button>
               </li>
-              <li>
+              <li class="invisible_1024px">
                 <button>
                   <i class="fa-solid fa-hand-holding-dollar"></i>
                   <span>Thanks</span>
+                </button>
+              </li>
+              <li class="visible_1024px">
+                <button>
+                  <span class="material-symbols-outlined"> more_horiz </span>
                 </button>
               </li>
             </ul>
@@ -174,6 +181,7 @@
                 </div>
               </a>
             </li>
+            
             <li class="item">
               <a class="itemLink" href="#">
                 <div class="thumb">
@@ -229,6 +237,7 @@
                 </div>
               </a>
             </li>
+
             <li class="item">
               <a class="itemLink" href="#">
                 <div class="thumb">
@@ -246,6 +255,7 @@
                 </div>
               </a>
             </li>
+
             <li class="item">
               <a class="itemLink" href="#">
                 <div class="thumb">
@@ -263,6 +273,7 @@
                 </div>
               </a>
             </li>
+
             <li class="item">
               <a class="itemLink" href="#">
                 <div class="thumb">
@@ -280,6 +291,7 @@
                 </div>
               </a>
             </li>
+
             <li class="item">
               <a class="itemLink" href="#">
                 <div class="thumb">
@@ -564,7 +576,7 @@
     </main>
     <!-- darkmode (DEMO) -->
     <button class="darkMode" id="darkMode" onclick="toggleDarkMode()">
-      DarkMode
+      dark mode
     </button>
 
     <script type="text/javascript" src="script.js"></script>
