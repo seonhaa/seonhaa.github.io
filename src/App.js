@@ -1,22 +1,39 @@
-import logo from "./logo.svg";
-import "./App.css";
+// 리액트로 간단한 계산기 구현하기
+import { React } from "react";
+import { useState } from "react";
 
 function App() {
+  const [num1, setNum1] = useState("");
+  const [num2, setNum2] = useState("");
+  const [result, setResult] = useState("");
+
   return (
     <div className="App">
+      {/* 제목 */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          "Hello World"
-        </a>
+        <h1>"React Calculator"</h1>
       </header>
+
+      {/* 계산기 구현부 */}
+      <div>
+        <input
+          value={num1}
+          onChange={(e) => setNum1(Number(e.target.value))}
+          placeholder="숫자1 입력"
+        />{" "}
+        <input
+          value={num2}
+          onChange={(e) => setNum2(Number(e.target.value))}
+          placeholder="숫자2 입력"
+        />
+        {/* 버튼 클릭 시 연산 진행 */}
+        <button onClick={() => setResult(num1 + num2)}> + </button>
+        <button onClick={() => setResult(num1 - num2)}> - </button>
+        <button onClick={() => setResult(num1 * num2)}> * </button>
+        <button onClick={() => setResult(num1 / num2)}> / </button>
+        {/* 결과값 */}
+        <p>계산값: {result}</p>
+      </div>
     </div>
   );
 }
