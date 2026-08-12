@@ -27,6 +27,7 @@ function App() {
           placeholder="숫자2 입력"
         />
         {/* 버튼 클릭 시 연산 진행 */}
+        {/* 더하기에만 Number 문자형으로 변환 */}
         <button onClick={() => setResult(Number(num1) + Number(num2))}>
           {" "}
           +{" "}
