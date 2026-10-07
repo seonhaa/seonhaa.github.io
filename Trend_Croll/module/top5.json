@@ -1,0 +1,47 @@
+[
+  {
+    "title": "병역",
+    "traffic": "500+",
+    "pubDate": "Tue, 6 Oct 2026 18:40:00 -0700",
+    "newsTitle": "박정희 고향 구미 지역 멀티플렉스, 결국 ‘암살자(들)’ 내렸다···경북 국힘 의원들 회견 연 날 ‘상영 중단’",
+    "snippet": "요약 없음",
+    "newsBody": "[본문 크롤 실패: Could not find Chrome (ver. 137.0.7151.119). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /Users/seonha/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.]",
+    "link": "https://www.khan.co.kr/article/202610061949001"
+  },
+  {
+    "title": "오타니 쇼헤이",
+    "traffic": "200+",
+    "pubDate": "Tue, 6 Oct 2026 18:50:00 -0700",
+    "newsTitle": "‘로버츠 감독 결단’ 오타니, 2020년 이후 6년 만에 ‘5번 타자 추락’",
+    "snippet": "요약 없음",
+    "newsBody": "[본문 크롤 실패: Could not find Chrome (ver. 137.0.7151.119). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /Users/seonha/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.]",
+    "link": "https://v.daum.net/v/20261007063456040"
+  },
+  {
+    "title": "수학",
+    "traffic": "200+",
+    "pubDate": "Tue, 6 Oct 2026 18:40:00 -0700",
+    "newsTitle": "Sharing AI progress in mathematics",
+    "snippet": "요약 없음",
+    "newsBody": "[본문 크롤 실패: Could not find Chrome (ver. 137.0.7151.119). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /Users/seonha/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.]",
+    "link": "https://openai.com/index/sharing-ai-progress-in-mathematics/"
+  },
+  {
+    "title": "인구감소지역",
+    "traffic": "100+",
+    "pubDate": "Tue, 6 Oct 2026 19:00:00 -0700",
+    "newsTitle": "인구감소지역 89→92곳…부산 금정·동두천·통영 새로 편입",
+    "snippet": "요약 없음",
+    "newsBody": "[본문 크롤 실패: Could not find Chrome (ver. 137.0.7151.119). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /Users/seonha/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.]",
+    "link": "https://v.daum.net/v/20261007103301977"
+  },
+  {
+    "title": "신협",
+    "traffic": "100+",
+    "pubDate": "Tue, 6 Oct 2026 18:50:00 -0700",
+    "newsTitle": "신협 부실채권 관리체계 강화…“건전성 관리 기대”",
+    "snippet": "요약 없음",
+    "newsBody": "[본문 크롤 실패: Could not find Chrome (ver. 137.0.7151.119). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /Users/seonha/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.]",
+    "link": "https://v.daum.net/v/8i9XWgUZhH"
+  }
+]

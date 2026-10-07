@@ -1,0 +1,9 @@
+project/
+├── trendWatcher.js         ← 메인 실행 파일
+├── module/
+│   ├── runWatcher.js       ← runWatcher 함수 분리
+│   ├── fetchRss.js
+│   ├── parseRss.js
+│   ├── oldData.js
+│   ├── newsBody.js
+└── top5.json
